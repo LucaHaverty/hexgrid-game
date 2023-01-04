@@ -22,8 +22,9 @@ public class Bomb : MonoBehaviour
         
         while (Time.time - startTime < moveTime)
         {
-            float percent = bombMovement.Evaluate(Mathf.Max(0, (Time.time - startTime) / moveTime));
-            transform.position = Vector2.Lerp(startPos, targetPos, percent);
+            float percent = Mathf.Max(0, (Time.time - startTime) / moveTime);
+            float curveEval = bombMovement.Evaluate(percent);
+            transform.position = Vector2.Lerp(startPos, targetPos, curveEval);
             transform.localScale = startScale + startScale * (Mathf.Sin(percent*Mathf.PI)*scaleIncrease);
             yield return new WaitForEndOfFrame();
         }

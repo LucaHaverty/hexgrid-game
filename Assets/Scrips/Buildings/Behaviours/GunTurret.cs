@@ -37,30 +37,10 @@ public class GunTurret : AbstractAttackBuilding
         Vector2 firePos = justShot1 ? firePoint2.position : firePoint1.position;
         justShot1 = !justShot1;
         
-        
-
         GameObject bullet = Instantiate(bulletPrefab, firePos, partToRotate.rotation);
 
         bullet.transform.SetParent(Settings.instance.bulletContainer);
         bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(partToRotate.rotation.eulerAngles.z*Mathf.Deg2Rad),Mathf.Sin(partToRotate.rotation.eulerAngles.z*Mathf.Deg2Rad)) * bulletSpeed;
-        
-        Destroy(bullet, Settings.instance.autoDestroyBulletTime);
-    }
-    
-    protected void AttackOld()
-    {
-        AudioManager.instance.Play("GunFire");
-        
-        Vector2 firePos = justShot1 ? firePoint2.position : firePoint1.position;
-        justShot1 = !justShot1;
-        
-        float idealBulletAngle = Utils.ProjectileTrajectoryPrediction(target.transform.position, target.GetComponent<AbstractMovement>().velocity, target.transform.rotation.eulerAngles.z, firePos, bulletSpeed, 0);
-        partToRotate.transform.rotation = Quaternion.Euler(0, 0, idealBulletAngle);
-
-        GameObject bullet = Instantiate(bulletPrefab, firePos, Quaternion.Euler(0, 0, idealBulletAngle));
-
-        bullet.transform.SetParent(Settings.instance.bulletContainer);
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(idealBulletAngle*Mathf.Deg2Rad),Mathf.Sin(idealBulletAngle*Mathf.Deg2Rad)) * bulletSpeed;
         
         Destroy(bullet, Settings.instance.autoDestroyBulletTime);
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30720e514cbfb484a9f69eba48fabefa, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  id: 0
+  id: 10
   tileName: Grass
   colorRange:
     serializedVersion: 2
@@ -41,6 +41,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
+    m_ColorSpace: -1
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   walkable: 1

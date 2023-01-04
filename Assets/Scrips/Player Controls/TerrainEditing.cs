@@ -10,8 +10,8 @@ public class TerrainEditing : MonoBehaviour
     {
         UpdateSelection();
 
-        if (Input.GetMouseButton(0) && Input.GetKeyDown(KeyCode.LeftShift))
-            SetSelectedTile();
+        /*if (Input.GetMouseButton(0))
+            SetSelectedTile();*/
     }
 
     void UpdateSelection()
