@@ -6,24 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="f5c2caa3-e431-49fe-8a5b-325ad74ff9e6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HexgridGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HexgridGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Bomb.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Bomb.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scrips/Buildings/Behaviours/GunTurret.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scrips/Buildings/Behaviours/GunTurret.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scrips/Other Components/Bomb.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scrips/Other Components/Bomb.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scrips/Player Controls/TerrainEditing.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scrips/Player Controls/TerrainEditing.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/PixelHex.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Sprites/PixelHex.png.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileTypes/1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileTypes/1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileTypes/2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileTypes/2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileTypes/3.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileTypes/3.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileTypes/4.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileTypes/4.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TileTypes/Grass.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TileTypes/Grass.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scrips/Enemies/Attacks/Types/BombAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scrips/Enemies/Attacks/Types/BombAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1-prev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/AssetImportWorker1.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-AssetImportWorker0.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Logs/shadercompiler-UnityShaderCompiler.exe1.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +82,8 @@
       <updated>1672697905214</updated>
       <workItem from="1672697930134" duration="17000" />
       <workItem from="1672775548422" duration="1442000" />
-      <workItem from="1672811895402" duration="1038000" />
+      <workItem from="1672811895402" duration="1319000" />
+      <workItem from="1672897956296" duration="1440000" />
     </task>
     <servers />
   </component>
