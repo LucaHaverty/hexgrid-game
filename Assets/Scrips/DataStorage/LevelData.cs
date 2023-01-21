@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class LevelData : ScriptableObject
 {
-    public int buildTime;
+    public int initialBuildTime;
+    public int repairTime;
     public int moneyGainPerWave;
     public int startingMoney;
     public int startingHealth;

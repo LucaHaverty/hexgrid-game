@@ -24,6 +24,8 @@ public class GridManager : MonoBehaviour
         offset = CalculateGridOffset();
         highlightSprite.transform.localScale = new Vector2(Settings.instance.tileScale * highlightSprite.transform.localScale.x, Settings.instance.tileScale * highlightSprite.transform.localScale.y);
         CreateGrid();
+        
+        tiles = MapSaveData.LoadMap(0);
     }
 
     private void Update()

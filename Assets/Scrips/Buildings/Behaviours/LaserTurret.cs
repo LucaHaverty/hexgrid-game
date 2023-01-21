@@ -9,6 +9,10 @@ public class LaserTurret : AbstractAttackBuilding
 {
     public Transform firePoint;
     public Transform laserSprite;
+    public ParticleSystem laserParticles;
+    ParticleSystem.ShapeModule particlesShape;
+    ParticleSystem.EmissionModule particlesEmission;
+    
     public LayerMask layerMask;
     public float damagePerSecond;
     
@@ -22,6 +26,9 @@ public class LaserTurret : AbstractAttackBuilding
 
         range = GetComponent<EnemyFinder>().range;
         partToRotate.transform.localScale *= Settings.instance.tileScale;
+        
+        particlesShape = laserParticles.shape;
+        particlesEmission = laserParticles.emission;
     }
 
     protected override void Update()
@@ -63,6 +70,10 @@ public class LaserTurret : AbstractAttackBuilding
         laserSprite.position = Vector2.Lerp(firePoint.position, targetPos, 0.5f);
         laserSprite.localScale = new Vector2(length, laserSprite.localScale.y);
         laserSprite.rotation = partToRotate.rotation;
+        
+        // Particles
+        particlesShape.radius = length/2;
+        particlesEmission.rateOverTime = length * 30f;
     }
     protected override void Attack() { }
 }

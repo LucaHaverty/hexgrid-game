@@ -1657,7 +1657,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 708702611}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.46702152, y: -0.20699942, z: -0.0036561592}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1979,7 +1979,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   baseTile: {fileID: 11400000, guid: d623d4d98bfceab45b94989b9a821929, type: 2}
   tileTypes:
-  - {fileID: 11400000, guid: 34736deadbfa81740b94b7c189b0a742, type: 2}
+  - {fileID: 11400000, guid: d623d4d98bfceab45b94989b9a821929, type: 2}
   - {fileID: 11400000, guid: 421c6175b6bf91e45a68a47b5b446c42, type: 2}
   - {fileID: 11400000, guid: 9816d2c1300b1ed4db9686537ce32017, type: 2}
   - {fileID: 11400000, guid: addeb1e96c4e455459c881c751a036c3, type: 2}
@@ -2019,7 +2019,7 @@ MonoBehaviour:
   autoDestroyBulletTime: 5
   buildings:
   - {fileID: 11400000, guid: e1a087b6ba370184d8ae994fcc2b0245, type: 2}
-  - {fileID: 11400000, guid: 46e2da3ffc8d7194a8438bd07a1b7aed, type: 2}
+  - {fileID: 0}
   enemyContainer: {fileID: 514604321}
   buildingContainer: {fileID: 2045793695}
   bulletContainer: {fileID: 2036008807}
@@ -3473,6 +3473,7 @@ Transform:
   - {fileID: 514604321}
   - {fileID: 2045793695}
   - {fileID: 2036008807}
+  - {fileID: 1900333748}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3742,7 +3743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd04c79671d9444b893a2d1cfcadd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 11400000, guid: f4721b5dbbec69a4fa1027e58a5090f3, type: 2}
+  levelData: {fileID: 11400000, guid: 2f69ccff66349544194ad2cd2476d7e2, type: 2}
   currentWave: 0
 --- !u!4 &1846345618
 Transform:
@@ -3758,6 +3759,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1900333747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1900333748}
+  m_Layer: 0
+  m_Name: EffectsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1900333748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1900333747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1700745389}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1916040669
 GameObject:

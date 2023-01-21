@@ -1,6 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
+using Scrips;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -99,10 +98,10 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RunGameLoop()
     {
+        yield return stateUI.StartCountdown(levelData.initialBuildTime, "Next Attack In");
+
         while (true)
         {
-            yield return stateUI.StartCountdown(levelData.buildTime, "Next Attack In");
-            
             SetGameState(GameState.Spawning);
             stateUI.HideTimer();
             while (state == GameState.Spawning || state == GameState.DoneSpawning)
@@ -116,6 +115,8 @@ public class GameManager : MonoBehaviour
             SetGameState(GameState.Building);
             currentWave++;
             MoneyManager.instance.AttemptAddMoney(levelData.moneyGainPerWave);
+            
+            yield return stateUI.StartCountdown(levelData.repairTime, "Next Attack In");
         }
     }
 }

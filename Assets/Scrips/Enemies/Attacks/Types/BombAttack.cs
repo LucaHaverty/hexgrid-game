@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public class BombAttack : AbstractAttack
 {
     public float range;
+    public GameObject radialExplosionEffect;
 
     private bool exploded = false;
 
@@ -17,6 +19,8 @@ public class BombAttack : AbstractAttack
             return;
         }
 
+        exploded = true;
+
         foreach (Transform building in Settings.instance.buildingContainer)
         {
             if (Vector2.Distance(transform.position, building.transform.position) > range)
@@ -24,6 +28,11 @@ public class BombAttack : AbstractAttack
             
             building.GetComponent<Health>().Damage(damage);
         }
+
+        GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);
+        effect.transform.localScale = new Vector2(range, range);
+        Destroy(effect, 1f);
+        
         GetComponent<Health>().InstaKill();
     }
 }

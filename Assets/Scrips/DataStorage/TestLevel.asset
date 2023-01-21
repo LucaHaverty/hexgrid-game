@@ -18,5 +18,5 @@ MonoBehaviour:
   startingHealth: 5
   startingEnemyGroups: 5
   minEnemyGroupSize: 3
-  maxEnemyGroupSize: 5
+  maxEnemyGroupSize: 3
   timeBetweenSpawns: 0.25
