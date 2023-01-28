@@ -49,6 +49,7 @@ public static class Pathfinding
                 newMovementCostToNeighbor += currentTile.type.walkWeight;
                 if (neighbor.hasBuilding)
                     newMovementCostToNeighbor += buildingWalkWeight;
+                newMovementCostToNeighbor += Random.Range(0, GameManager.instance.levelData.randomPathfindWeight);
 
                 if (newMovementCostToNeighbor < neighbor.gCost || !openSet.Contains(neighbor))
                 {
@@ -61,7 +62,7 @@ public static class Pathfinding
         }
         
         if (path.Count > 0)
-            path.RemoveAt(path.Count-1);
+            path.RemoveAt(path.Count-1); 
         callback(path, waypoints, pathFound);
     }
 

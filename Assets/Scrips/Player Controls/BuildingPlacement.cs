@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 public class BuildingPlacement : MonoBehaviour
 {
+    public static BuildingPlacement instance;
+    private void Awake() { instance = this; }
+
+    public UnityEvent OnBuildingPlaced = new UnityEvent();
     private Camera cam;
     
     void Start()
@@ -20,6 +26,7 @@ public class BuildingPlacement : MonoBehaviour
 
     private void BuildSelected()
     {
-        BobTheBuilder.AttemptBuild(ShopManager.instance.GetSelectedBuilding(), cam.ScreenToWorldPoint(Input.mousePosition));
+        bool succeeded = BobTheBuilder.AttemptBuild(ShopManager.instance.GetSelectedBuilding(), cam.ScreenToWorldPoint(Input.mousePosition));
+        if (succeeded) OnBuildingPlaced.Invoke();
     }
 }

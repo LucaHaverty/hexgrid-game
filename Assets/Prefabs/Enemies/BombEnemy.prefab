@@ -5363,11 +5363,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 0
   startAttackingOnInit: 0
-  damage: 4
+  damage: 3
   OnTargetDeath:
     m_PersistentCalls:
       m_Calls: []
-  range: 2
+  range: 1.5
   radialExplosionEffect: {fileID: 2751608593829940741, guid: 102a091eb5bc60840a8e7cd562c7d058, type: 3}
 --- !u!114 &2343372723915783020
 MonoBehaviour:
@@ -5381,7 +5381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc002a352a88ee24ca0727b7b9ac835a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 8
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -5412,7 +5412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51dc8ce0e773eb4e94067554eaa8bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 1.5
   velocity: {x: 0, y: 0}
   buildingWalkWeight: -10
   OnHitBuilding:

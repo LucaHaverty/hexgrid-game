@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 
 public class ShopManager : MonoBehaviour
@@ -14,6 +15,9 @@ public class ShopManager : MonoBehaviour
     [SerializeField] private Color idleColor;
     [SerializeField] private Color hoverColor;
     [SerializeField] private Color selectedColor;
+
+    public UnityEvent<ShopItem> OnNewItemSelected = new UnityEvent<ShopItem>();
+    public UnityEvent OnAllItemsDeselected = new UnityEvent();
 
     private MoneyManager moneyManager;
 
@@ -52,6 +56,8 @@ public class ShopManager : MonoBehaviour
     {
         item.SetBackgroundColor(selectedColor);
         activeItem = item;
+        OnNewItemSelected.Invoke(item);
+        
         ResetItems();
     }
 

@@ -16,11 +16,6 @@ public class GunTurret : AbstractAttackBuilding
         partToRotate.transform.localScale *= Settings.instance.tileScale;
     }
 
-    protected override void Update()
-    {
-        base.Update();
-    }
-
     protected override void RotateTurret()
     {
         float idealBulletAngle = Utils.ProjectileTrajectoryPrediction(target.transform.position, target.GetComponent<AbstractMovement>().velocity, target.transform.rotation.eulerAngles.z, firePointMid.position, bulletSpeed, 0);
@@ -32,7 +27,7 @@ public class GunTurret : AbstractAttackBuilding
     private bool justShot1;
     protected override void Attack()
     {
-        AudioManager.instance.Play("GunFire");
+        //AudioManager.instance.Play("GunFire");
         
         Vector2 firePos = justShot1 ? firePoint2.position : firePoint1.position;
         justShot1 = !justShot1;
@@ -40,7 +35,7 @@ public class GunTurret : AbstractAttackBuilding
         GameObject bullet = Instantiate(bulletPrefab, firePos, partToRotate.rotation);
 
         bullet.transform.SetParent(Settings.instance.bulletContainer);
-        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Cos(partToRotate.rotation.eulerAngles.z*Mathf.Deg2Rad),Mathf.Sin(partToRotate.rotation.eulerAngles.z*Mathf.Deg2Rad)) * bulletSpeed;
+        bullet.GetComponent<Rigidbody2D>().velocity = Utils.AngleToVectorDegrees(partToRotate.rotation.eulerAngles.z) * bulletSpeed;
         
         Destroy(bullet, Settings.instance.autoDestroyBulletTime);
     }

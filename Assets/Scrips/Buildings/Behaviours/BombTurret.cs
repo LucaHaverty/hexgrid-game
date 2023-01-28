@@ -6,19 +6,20 @@ public class BombTurret : AbstractAttackBuilding
 {
     public GameObject bulletPrefab;
     public Transform firePoint;
-    public float bombSpeed;
 
     protected override void Start()
     {
         base.Start();
         partToRotate.transform.localScale *= Settings.instance.tileScale;
-        firstAttackDelay = 1;
+        firstAttackDelay = 0.25f;
     }
     
     protected override void Attack()
     {
-        GameObject bomb = Instantiate(bulletPrefab, firePoint.position, partToRotate.rotation);
+        GameObject bomb = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
         bomb.transform.SetParent(Settings.instance.bulletContainer);
-        bomb.GetComponent<Bomb>().StartMovement(target.transform.position, Vector2.Distance(transform.position, target.transform.position), bombSpeed);
+        bomb.GetComponent<Bomb>().SetTarget(target.transform);
+        bomb.GetComponent<Bomb>().rotation = partToRotate.rotation.eulerAngles.z;
+
     }
 }

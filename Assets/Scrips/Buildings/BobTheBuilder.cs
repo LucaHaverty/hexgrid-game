@@ -5,18 +5,18 @@ using UnityEngine;
 
 public class BobTheBuilder : MonoBehaviour
 {
-    public static void AttemptBuild(BuildingType type, Vector2 pos)
+    public static bool AttemptBuild(BuildingType type, Vector2 pos)
     {
         HexTile parentTile = GridManager.instance.FindCloseTile(pos);
         if (parentTile == null)
-            return;
+            return false;
 
         if (parentTile.hasBuilding)
-            return;
+            return false;
         
         if (!MoneyManager.instance.AttemptSubtractMoney(type.price))
         {
-            return;
+            return false;
         }
         
         AbstractBuilding newBuilding = Instantiate(type.prefab, parentTile.worldPos, Quaternion.identity).GetComponent<AbstractBuilding>();
@@ -24,5 +24,7 @@ public class BobTheBuilder : MonoBehaviour
 
         parentTile.AddBuilding(newBuilding);
         newBuilding.SetParentTile(parentTile);
+        
+        return true;
     }
 }

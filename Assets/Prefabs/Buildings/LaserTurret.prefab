@@ -5294,6 +5294,7 @@ GameObject:
   - component: {fileID: 8598012243466436022}
   - component: {fileID: 8598012243466436017}
   - component: {fileID: 7838007828332058604}
+  - component: {fileID: 6060694770355661574}
   m_Layer: 0
   m_Name: LaserTurret
   m_TagString: Untagged
@@ -5335,7 +5336,7 @@ MonoBehaviour:
   spriteTransform: {fileID: 8598012243073447561}
   attackCooldown: 0
   disableTimedAttack: 1
-  rotateSpeed: 3.4
+  rotateSpeed: 4
   partToRotate: {fileID: 6871478597217758267}
   firePoint: {fileID: 4193260985781400237}
   laserSprite: {fileID: 4193260986323084299}
@@ -5374,7 +5375,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc002a352a88ee24ca0727b7b9ac835a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 7
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -5394,3 +5395,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRend: {fileID: 8349104913963426414}
+--- !u!114 &6060694770355661574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8598012243466436019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bad5defa3e3b548b74c1c46badf8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToFlash:
+  - {fileID: 8598012243073447566}
+  - {fileID: 1746666353346409956}

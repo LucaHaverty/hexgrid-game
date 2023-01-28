@@ -34,7 +34,7 @@ public class EnemySpawner : MonoBehaviour
     private static IEnumerator SpawnGroupInRadiusRoutine(EnemyType type, Vector2 origin, float radius, int numEnemies)
     {
         GameObject circleClone = Instantiate(Settings.instance.radiusCirclePrefab, origin, Quaternion.identity);
-        circleClone.transform.SetParent(Settings.instance.tempSpritesContrainer);
+        circleClone.transform.SetParent(Settings.instance.effectsContainer);
         circleClone.transform.localScale = new Vector3(radius*2+0.5f, radius*2+0.5f);
 
         yield return new WaitForSeconds(Settings.instance.radiusTimeBeforeSpawn);

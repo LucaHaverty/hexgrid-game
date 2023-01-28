@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47249857262b3774486cb8deb8ce4cf6, type: 3}
   m_Name: InfGame
   m_EditorClassIdentifier: 
-  initialBuildTime: 1
-  repairTime: 10
-  moneyGainPerWave: 50
-  startingMoney: 1000
+  initialBuildTime: 5
+  repairTime: 1
+  moneyGainPerWave: 100
+  startingMoney: 500
   startingHealth: 5
+  randomPathfindWeight: 3.5
   startingEnemyGroups: 2
   minEnemyGroupSize: 3
   maxEnemyGroupSize: 5
-  timeBetweenSpawns: 0.25
+  timeBetweenSpawns: 1

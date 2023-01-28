@@ -30,6 +30,7 @@ public class BombAttack : AbstractAttack
         }
 
         GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);
+        effect.transform.SetParent(Settings.instance.effectsContainer);
         effect.transform.localScale = new Vector2(range, range);
         Destroy(effect, 1f);
         

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Scrips;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,13 +12,14 @@ public class GridManager : MonoBehaviour
 
     public GameObject highlightSprite;
     public HexTile tilePrefab;
-    HexTile selectedTile;
+    public HexTile selectedTile;
 
     public HexTile[,] tiles;
 
     public Vector2 offset;
 
     public UnityEvent OnGridUpdate = new UnityEvent();
+    public UnityEvent<HexTile> OnSelectedTileChange = new UnityEvent<HexTile>();
 
     void Start()
     {
@@ -39,14 +41,10 @@ public class GridManager : MonoBehaviour
     }
     public void TileSelection()
     {
+        var prevTile = selectedTile;
         selectedTile = FindCloseTile(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-
-        if (selectedTile == null) highlightSprite.SetActive(false);
-        else
-        {
-            highlightSprite.SetActive(true);
-            highlightSprite.transform.position = selectedTile.worldPos;
-        }
+        
+        if (selectedTile != prevTile) OnSelectedTileChange.Invoke(selectedTile);
     }
 
     void CreateGrid()

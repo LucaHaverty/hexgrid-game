@@ -1,39 +1,81 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    public AnimationCurve bombMovement;
-    public float scaleIncrease;
     public float explosionRange;
     public float damage;
-    public void StartMovement(Vector2 targetPos, float distance, float speed)
+    public float rotateSpeed;
+    public float moveSpeed;
+    public GameObject radialExplosionEffect;
+    public Transform sprite;
+
+    private Transform target;
+    public float rotation;
+    
+    public void SetTarget(Transform target)
     {
-        StartCoroutine(RunMovement(targetPos, distance/speed));
+        this.target = target;
     }
 
-    IEnumerator RunMovement(Vector2 targetPos, float moveTime)
+    private void Start()
     {
-        Vector2 startPos = transform.position;
-        Vector2 startScale = transform.localScale;
-        float startTime = Time.time;
-        
-        while (Time.time - startTime < moveTime)
+        sprite.rotation = Quaternion.Euler(0, 0, rotation);
+    }
+
+    private void Update()
+    {
+        if (target == null)
         {
-            float percent = Mathf.Max(0, (Time.time - startTime) / moveTime);
-            float curveEval = bombMovement.Evaluate(percent);
-            transform.position = Vector2.Lerp(startPos, targetPos, curveEval);
-            transform.localScale = startScale + startScale * (Mathf.Sin(percent*Mathf.PI)*scaleIncrease);
-            yield return new WaitForEndOfFrame();
+            FindNewTarget();
+            return;
         }
-        DamageEnemiesInRange();
-        Explode();
+
+        // Turn towards target
+        float targetAngle = Utils.RotateTowardsDegrees2D(target.transform.position, transform.position);
+        rotation = Quaternion.Slerp(quaternion.Euler(0, 0, rotation*Mathf.Deg2Rad), quaternion.Euler(0, 0, targetAngle*Mathf.Deg2Rad), rotateSpeed * Time.deltaTime).eulerAngles.z;
+        sprite.rotation = Quaternion.Euler(0, 0, rotation);
+    }
+
+    private void FixedUpdate()
+    {
+        // Movement
+        transform.Translate(Utils.AngleToVectorDegrees(rotation) * (moveSpeed*Time.fixedDeltaTime));
+    }
+
+    private void FindNewTarget()
+    {
+        Transform currentEnemy = null;
+        float currentDistance = Mathf.Infinity;
+
+        foreach (Transform enemy in Settings.instance.enemyContainer)
+        {
+            float distFromTower = Vector2.Distance(transform.position, enemy.position);
+            float distFromTarget = distFromTower;
+
+            if (distFromTarget >= currentDistance)
+                continue;
+
+            currentEnemy = enemy;
+            currentDistance = distFromTarget;
+        }
+
+        target = currentEnemy;
     }
 
     private void Explode()
     {
+        DamageEnemiesInRange();
+        
+        GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);
+        effect.transform.SetParent(Settings.instance.effectsContainer);
+        effect.transform.localScale = new Vector2(explosionRange, explosionRange);
+        Destroy(effect, 1f);
+        
         Destroy(gameObject);
     }
     
@@ -46,6 +88,14 @@ public class Bomb : MonoBehaviour
             
             if (dist < explosionRange)
                 enemy.GetComponent<Health>().Damage(damage);
+        }
+    }
+    
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.TryGetComponent<AbstractEnemy>(out var enemy))
+        {
+            Explode();
         }
     }
 }

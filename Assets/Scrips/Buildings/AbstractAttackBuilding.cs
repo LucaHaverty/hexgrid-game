@@ -57,7 +57,7 @@ public abstract class AbstractAttackBuilding : AbstractBuilding
 
     protected virtual void RotateTurret()
     {
-        Quaternion targetRotation = Utils.rotateTowardsQuaternion2D(target.transform.position, transform.position);
+        Quaternion targetRotation = Utils.RotateTowardsQuaternion2D(target.transform.position, transform.position);
         partToRotate.rotation = Quaternion.Lerp(partToRotate.rotation, targetRotation, rotateSpeed*Time.deltaTime);
     }
 }

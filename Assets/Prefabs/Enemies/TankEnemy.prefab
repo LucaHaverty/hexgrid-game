@@ -5498,7 +5498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackCooldown: 1
   startAttackingOnInit: 0
-  damage: 2.5
+  damage: 4
   OnTargetDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -5514,7 +5514,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc002a352a88ee24ca0727b7b9ac835a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  health: 22
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -5545,7 +5545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51dc8ce0e773eb4e94067554eaa8bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1.2
   velocity: {x: 0, y: 0}
   buildingWalkWeight: 12
   OnHitBuilding:

@@ -5239,7 +5239,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc002a352a88ee24ca0727b7b9ac835a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
+  health: 10
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -5270,7 +5270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51dc8ce0e773eb4e94067554eaa8bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  speed: 2
   velocity: {x: 0, y: 0}
   buildingWalkWeight: 25
   OnHitBuilding:

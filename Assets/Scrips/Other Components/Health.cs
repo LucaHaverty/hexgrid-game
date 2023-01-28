@@ -34,6 +34,7 @@ public class Health : MonoBehaviour
 
     public void InstaKill()
     {
+        OnHealthUpdate.Invoke(0);
         Damage(health);
     }
 }

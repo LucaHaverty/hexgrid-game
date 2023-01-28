@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingName: 3
   prefab: {fileID: 6829639240716168465, guid: 81bc3c37cd6344448b098fb1ca95f808, type: 3}
-  price: 80
-  previewSprite: {fileID: 0}
+  price: 140
+  previewSprite: {fileID: 21300000, guid: 9c28531fb38ebec44b1d1cd84ef46109, type: 3}

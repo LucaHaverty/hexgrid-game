@@ -381,6 +381,7 @@ GameObject:
   - component: {fileID: 6829639240716168460}
   - component: {fileID: 6829639240716168463}
   - component: {fileID: 6829639240716168462}
+  - component: {fileID: 6764540963355165136}
   m_Layer: 0
   m_Name: BombTurret
   m_TagString: Untagged
@@ -419,13 +420,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteTransform: {fileID: 6829639240125942807}
-  attackCooldown: 3
+  attackCooldown: 2
   disableTimedAttack: 0
-  rotateSpeed: 3
+  rotateSpeed: 8
   partToRotate: {fileID: 6829639239627179119}
-  bulletPrefab: {fileID: 8432915823974767136, guid: 41803e60f775d2144a5e7a722d51a9e8, type: 3}
+  bulletPrefab: {fileID: 1657493267395877373, guid: 953654ad4e0778a4d9134f94b4ae050d, type: 3}
   firePoint: {fileID: 6829639240430285909}
-  bombSpeed: 3
 --- !u!114 &6829639240716168460
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50449509a0ba0e4a9a468ca780f1b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 4
   mode: 1
   OnNewEnemyFound:
     m_PersistentCalls:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc002a352a88ee24ca0727b7b9ac835a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 7
   OnDeath:
     m_PersistentCalls:
       m_Calls: []
@@ -475,3 +475,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRend: {fileID: 6829639239972134638}
+--- !u!114 &6764540963355165136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6829639240716168465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1bad5defa3e3b548b74c1c46badf8b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToFlash:
+  - {fileID: 6829639240125942804}
+  - {fileID: 6829639240175016912}
