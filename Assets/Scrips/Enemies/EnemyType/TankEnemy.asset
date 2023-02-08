@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca6ec662055a944cbe0e7f975c4bd64, type: 3}
   m_Name: TankEnemy
   m_EditorClassIdentifier: 
-  enemyName: 2
+  enemyName: 1
   prefab: {fileID: 7352704552204728733, guid: a9e0297f6d411a940803c7483f10eddb, type: 3}
+  coinsDropped: 6

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49b8e3f74f36648b66acac07c358cf, type: 3}
   m_Name: BombTurret
   m_EditorClassIdentifier: 
+  shopName: Missile
   buildingName: 3
   prefab: {fileID: 6829639240716168465, guid: 81bc3c37cd6344448b098fb1ca95f808, type: 3}
-  price: 140
+  price: 150
   previewSprite: {fileID: 21300000, guid: 9c28531fb38ebec44b1d1cd84ef46109, type: 3}

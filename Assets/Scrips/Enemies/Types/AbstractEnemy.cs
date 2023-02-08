@@ -9,10 +9,12 @@ public abstract class AbstractEnemy : MonoBehaviour
     [SerializeField]
     private EnemyState currentState = EnemyState.Idle;
 
+    [SerializeField] private EnemyType enemyType;
+
     protected virtual void Start()
     {
         GetComponent<AbstractMovement>()
-            .SetTargetPos(GridManager.instance.FindCloseTile(GameObject.Find("Flag").transform.position).worldPos);
+            .SetTargetPos(GridManager.instance.FindCloseTile(Settings.instance.enemyTarget.position).worldPos);
         currentState = EnemyState.Moving;
         
         GetComponent<Health>().OnDeath.AddListener(OnDeath);
@@ -29,7 +31,7 @@ public abstract class AbstractEnemy : MonoBehaviour
 
     public void OnDeath()
     {
-        GameManager.OnEnemyKilled();
+        GameManager.OnEnemyKilled(enemyType, transform.position);
         TriggerDestroy();
     }
 

@@ -20,8 +20,9 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         EnemySpawner.OnEnemySpawned.AddListener(OnEnemySpawned);
+
+        BobTheBuilder.AttemptBuild(BuildingName.EnemyTarget, Settings.instance.enemyTarget.position);
         
-        stateUI = GameStateUI.instance;
         StartCoroutine(RunGameLoop());
     }
 
@@ -36,17 +37,17 @@ public class GameManager : MonoBehaviour
         }
 
         if (state == GameState.DoneSpawning && Settings.instance.enemyContainer.childCount == 0)
-            SetGameState(GameState.PlayerWon);
+            SetGameState(GameState.WaveBeat);
     }
     #endregion
 
     #region Game State Management
-    private GameStateUI stateUI;
 
-    public static UnityEvent OnPlayerWin = new UnityEvent();
+    public static UnityEvent OnWaveBeat = new UnityEvent();
     public static UnityEvent OnPlayerLose = new UnityEvent();
     public static UnityEvent OnStartSpawning = new UnityEvent();
-    public static UnityEvent OnStartBuilding = new UnityEvent();
+    public static UnityEvent OnWaitingForWave = new UnityEvent();
+    public static UnityEvent OnPlayerWon = new UnityEvent();
 
     public int currentWave = 0;
 
@@ -58,52 +59,52 @@ public class GameManager : MonoBehaviour
         state = newState;
         switch (state)
         {
-            case(GameState.Building):
-                OnStartBuilding.Invoke();
-                SetStateText("Next Attack In");
+            case(GameState.WaitingForWave):
+                OnWaitingForWave.Invoke();
                 break;
             case(GameState.Spawning):
                 OnStartSpawning.Invoke();
-                SetStateText("Spawning");
                 break;
             case(GameState.DoneSpawning):
-                SetStateText("Done Spawning");
                 break;
             case(GameState.PlayerLost):
                 OnPlayerLose.Invoke();
-                SetStateText("You Lose");
+                break;
+            case(GameState.WaveBeat):
+                OnWaveBeat.Invoke();
                 break;
             case(GameState.PlayerWon):
-                OnPlayerWin.Invoke();
-                SetStateText("Player Win");
+                OnPlayerWon.Invoke();
                 break;
         }
     }
-
-    private static void SetStateText(string text) => instance.stateUI.SetStateText(text);
-
+    
     private static int enemiesAlive;
-
     public static void OnEnemySpawned()
     {
         enemiesAlive++;
     }
-    public static void OnEnemyKilled()
+    public static void OnEnemyKilled(EnemyType enemyType, Vector2 pos)
     {
+        MoneyManager.instance.SpawnAnimatedCoins(pos, enemyType.coinsDropped);
+        
         enemiesAlive -= 1;
-        if (state == GameState.DoneSpawning && enemiesAlive <= 1)
-            SetGameState(GameState.PlayerWon);
+        if (state == GameState.DoneSpawning && enemiesAlive <= 0)
+            SetGameState(GameState.WaveBeat);
     }
     #endregion
 
     IEnumerator RunGameLoop()
     {
-        yield return stateUI.StartCountdown(levelData.initialBuildTime, "Next Attack In");
-
-        while (true)
+        while (currentWave < levelData.waveData.waves.Length-1)
         {
-            SetGameState(GameState.Spawning);
-            stateUI.HideTimer();
+            SetGameState(GameState.WaitingForWave);
+
+            while (state != GameState.Spawning)
+                yield return null;
+            
+            currentWave++;
+
             while (state == GameState.Spawning || state == GameState.DoneSpawning)
             {
                 yield return new WaitForEndOfFrame();
@@ -112,21 +113,22 @@ public class GameManager : MonoBehaviour
             if (state == GameState.PlayerLost)
                 yield break;
             
-            SetGameState(GameState.Building);
-            currentWave++;
-            MoneyManager.instance.AttemptAddMoney(levelData.moneyGainPerWave);
-            
-            yield return stateUI.StartCountdown(levelData.repairTime, "Next Attack In");
+            SetGameState(GameState.WaitingForWave);
+            MoneyManager.instance.StartCoroutine(
+                MoneyManager.instance.WaveOverCoinAnim(Mathf.FloorToInt(levelData.moneyGainPerWave / 5f), 5));
         }
+        
+        
     }
 }
 
 public enum GameState
 {
     None,
-    Building,
+    WaitingForWave,
     Spawning,
     DoneSpawning,
     PlayerLost,
+    WaveBeat,
     PlayerWon
 }

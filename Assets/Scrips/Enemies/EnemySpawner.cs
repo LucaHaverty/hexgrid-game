@@ -13,11 +13,10 @@ public class EnemySpawner : MonoBehaviour
 
     public static UnityEvent OnEnemySpawned = new UnityEvent();
 
-    public EnemyName[] testEnemies;
+    //public EnemyName[] testEnemies;
 
     public static void SpawnSingleEnemy(EnemyType type, Vector2 position)
     {
-        type = Settings.instance.EnemyNameToType(instance.testEnemies[Random.Range(0, instance.testEnemies.Length)]);
         Instantiate(type.prefab, position, Quaternion.identity).transform.SetParent(Settings.instance.enemyContainer);
         OnEnemySpawned.Invoke();
     }

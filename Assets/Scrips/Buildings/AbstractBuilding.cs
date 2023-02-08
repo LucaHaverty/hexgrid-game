@@ -21,7 +21,7 @@ public abstract class AbstractBuilding : MonoBehaviour
 
     protected virtual void Update() { }
 
-    public void Destroy()
+    public virtual void Destroy()
     {
         parentTile.RemoveBuilding();
     }

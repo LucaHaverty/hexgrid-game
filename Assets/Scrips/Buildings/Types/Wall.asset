@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49b8e3f74f36648b66acac07c358cf, type: 3}
   m_Name: Wall
   m_EditorClassIdentifier: 
+  shopName: Wall
   buildingName: 0
   prefab: {fileID: 1856433081179198300, guid: 2c8e6167e84a47e4bbb553d5938e44a9, type: 3}
   price: 20

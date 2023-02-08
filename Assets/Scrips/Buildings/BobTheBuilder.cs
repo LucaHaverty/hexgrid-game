@@ -27,4 +27,9 @@ public class BobTheBuilder : MonoBehaviour
         
         return true;
     }
+
+    public static bool AttemptBuild(BuildingName name, Vector2 pos)
+    {
+        return AttemptBuild(Settings.instance.BuildingNameToType(name), pos);
+    }
 }

@@ -13,7 +13,6 @@ public class Health : MonoBehaviour
     
     private float startingHealth;
 
-
     private void Awake()
     {
         startingHealth = health;
@@ -36,5 +35,10 @@ public class Health : MonoBehaviour
     {
         OnHealthUpdate.Invoke(0);
         Damage(health);
+    }
+
+    public float GetPercentHealth()
+    {
+        return health / startingHealth;
     }
 }

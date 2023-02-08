@@ -25,6 +25,7 @@ public class Bomb : MonoBehaviour
     private void Start()
     {
         sprite.rotation = Quaternion.Euler(0, 0, rotation);
+        Invoke(nameof(Explode), Settings.instance.autoMissileDestroyTime);
     }
 
     private void Update()

@@ -420,7 +420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteTransform: {fileID: 6829639240125942807}
-  attackCooldown: 2
+  attackCooldown: 4
   disableTimedAttack: 0
   rotateSpeed: 8
   partToRotate: {fileID: 6829639239627179119}
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50449509a0ba0e4a9a468ca780f1b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 4
+  range: 2.4
   mode: 1
   OnNewEnemyFound:
     m_PersistentCalls:

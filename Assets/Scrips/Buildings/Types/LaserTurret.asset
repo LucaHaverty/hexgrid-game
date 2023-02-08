@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f49b8e3f74f36648b66acac07c358cf, type: 3}
   m_Name: LaserTurret
   m_EditorClassIdentifier: 
+  shopName: Laser
   buildingName: 2
   prefab: {fileID: 8598012243466436019, guid: ab742222bcccbc14b8a8c69dce542b2a, type: 3}
-  price: 105
+  price: 130
   previewSprite: {fileID: 21300000, guid: 1236d470676a896438e4735cb6e7972b, type: 3}

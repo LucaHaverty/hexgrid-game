@@ -7,6 +7,7 @@ using UnityEngine;
 public class BombAttack : AbstractAttack
 {
     public float range;
+    public float radialDamageFalloff;
     public GameObject radialExplosionEffect;
 
     private bool exploded = false;
@@ -23,15 +24,17 @@ public class BombAttack : AbstractAttack
 
         foreach (Transform building in Settings.instance.buildingContainer)
         {
-            if (Vector2.Distance(transform.position, building.transform.position) > range)
+            float distance = Vector2.Distance(transform.position, building.transform.position);
+            if (distance > range)
                 continue;
-            
+
+            float appliedDamage = Mathf.Lerp(damage, damage / radialDamageFalloff, distance / range);
             building.GetComponent<Health>().Damage(damage);
         }
 
         GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);
         effect.transform.SetParent(Settings.instance.effectsContainer);
-        effect.transform.localScale = new Vector2(range, range);
+        effect.transform.localScale = new Vector2(range*2, range*2);
         Destroy(effect, 1f);
         
         GetComponent<Health>().InstaKill();

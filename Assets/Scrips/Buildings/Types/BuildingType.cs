@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class BuildingType : ScriptableObject
 {
+    public string shopName;
     public BuildingName buildingName;
     public GameObject prefab;
     public int price;
@@ -23,6 +24,7 @@ public enum BuildingName
     Wall,
     GunTurret,
     LaserTurret,
-    BombTurret
+    BombTurret,
+    EnemyTarget
 }
 

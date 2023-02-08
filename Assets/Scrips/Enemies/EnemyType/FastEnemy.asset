@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca6ec662055a944cbe0e7f975c4bd64, type: 3}
   m_Name: FastEnemy
   m_EditorClassIdentifier: 
-  enemyName: 1
+  enemyName: 0
   prefab: {fileID: 6342835816784775566, guid: 2b9225421df8ba64b88de3c59b1d59b7, type: 3}
+  coinsDropped: 5

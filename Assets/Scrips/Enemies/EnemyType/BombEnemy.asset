@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ca6ec662055a944cbe0e7f975c4bd64, type: 3}
   m_Name: BombEnemy
   m_EditorClassIdentifier: 
-  enemyName: 3
+  enemyName: 2
   prefab: {fileID: 7129212379582687495, guid: 5abc0ff4522709c439cb5c66e08ed883, type: 3}
+  coinsDropped: 4

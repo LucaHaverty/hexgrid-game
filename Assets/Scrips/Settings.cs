@@ -24,6 +24,7 @@ public class Settings : MonoBehaviour
     public float targetPosDistanceThreshold;
     public float towerFindEnemeisDelay;
     public float autoDestroyBulletTime;
+    public float autoMissileDestroyTime;
     public Gradient damageFlashColor;
     public float damageFlashTime;
     public enum EnemyFinderMode
@@ -52,8 +53,7 @@ public class Settings : MonoBehaviour
     public Transform enemyContainer;
     public Transform buildingContainer;
     public Transform bulletContainer;
-    //public Transform tempSpritesContrainer;
-    public Transform flag;
+    public Transform enemyTarget;
     public Transform effectsContainer;
 
     [Header("Enemy Spawner")]

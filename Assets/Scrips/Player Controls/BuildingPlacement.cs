@@ -26,7 +26,11 @@ public class BuildingPlacement : MonoBehaviour
 
     private void BuildSelected()
     {
-        bool succeeded = BobTheBuilder.AttemptBuild(ShopManager.instance.GetSelectedBuilding(), cam.ScreenToWorldPoint(Input.mousePosition));
+        var building = ShopManager.instance.GetSelectedBuilding();
+        if (!building)
+            return;
+            
+        bool succeeded = BobTheBuilder.AttemptBuild(building, cam.ScreenToWorldPoint(Input.mousePosition));
         if (succeeded) OnBuildingPlaced.Invoke();
     }
 }

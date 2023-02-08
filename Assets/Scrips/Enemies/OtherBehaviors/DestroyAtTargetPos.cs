@@ -10,7 +10,6 @@ public class DestroyAtTargetPos : MonoBehaviour
     {
         if (GetComponent<AbstractMovement>().DistanceFromTarget() < Settings.instance.targetPosDistanceThreshold)
         {
-            PlayerHealthManager.instance.SubtractHealth(1);
             GetComponent<AbstractEnemy>().TriggerDestroy();
         }
     }

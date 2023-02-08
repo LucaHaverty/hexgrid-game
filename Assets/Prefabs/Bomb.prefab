@@ -49,8 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionRange: 2.3
   damage: 7
-  rotateSpeed: 1.6
-  moveSpeed: 2
+  rotateSpeed: 3
+  moveSpeed: 3
   radialExplosionEffect: {fileID: 2751608593829940741, guid: 102a091eb5bc60840a8e7cd562c7d058, type: 3}
   sprite: {fileID: 4012288524128136271}
   rotation: 0

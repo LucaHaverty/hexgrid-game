@@ -45,7 +45,7 @@ public abstract class AbstractAttack : MonoBehaviour
     public void ResumeAttacking()
     {
         currentlyAttacking = true;
-        InvokeRepeating(nameof(AttemptAttack), attackCooldown/2f, attackCooldown);
+        InvokeRepeating(nameof(AttemptAttack), attackCooldown/4f, attackCooldown);
     }
 
     public bool IsAttacking() { return this.currentlyAttacking; }

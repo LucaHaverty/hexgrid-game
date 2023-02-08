@@ -5358,7 +5358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a50449509a0ba0e4a9a468ca780f1b7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 3.2
   mode: 1
   OnNewEnemyFound:
     m_PersistentCalls:

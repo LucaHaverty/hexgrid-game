@@ -7,6 +7,7 @@ public class EnemyType : ScriptableObject
 {
     public EnemyName enemyName;
     public GameObject prefab;
+    public int coinsDropped;
 
     [HideInInspector]
     public AbstractEnemy behavior => prefab.GetComponent<AbstractEnemy>();
@@ -18,8 +19,10 @@ public class EnemyType : ScriptableObject
 
 public enum EnemyName
 {
-    TestEnemy,
     FastEnemy,
     TankEnemy,
-    BombEnemy
+    BombEnemy,
+    AttackEnemy,
+    BasicEnemy,
+    EasyBoss
 }

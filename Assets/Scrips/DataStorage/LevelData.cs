@@ -11,8 +11,9 @@ public class LevelData : ScriptableObject
     public int startingMoney;
     public int startingHealth;
     public float randomPathfindWeight;
-    
-    [Header("Enemy Spawning")]
+
+    [Header("Enemy Spawning")] 
+    public WaveData waveData;
     public int startingEnemyGroups;
     public int minEnemyGroupSize;
     public int maxEnemyGroupSize;
