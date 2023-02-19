@@ -20,7 +20,10 @@ public class BuildingPlacement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift) ||
+            EventSystem.current.IsPointerOverGameObject())
+            return;
+        if (Input.GetMouseButton(0))
             BuildSelected();
     }
 

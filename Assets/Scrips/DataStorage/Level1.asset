@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 47249857262b3774486cb8deb8ce4cf6, type: 3}
-  m_Name: InfGame
+  m_Name: Level1
   m_EditorClassIdentifier: 
   initialBuildTime: 5
   repairTime: 1
@@ -23,3 +23,5 @@ MonoBehaviour:
   minEnemyGroupSize: 3
   maxEnemyGroupSize: 5
   timeBetweenSpawns: 1
+  mapToLoad: {fileID: 4900000, guid: 51520e51e50f5f646ae63dd931e15c5b, type: 3}
+  enemyTargetLocation: {x: 8, y: 1}

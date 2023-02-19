@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameState state { get; private set; } = GameState.None;
 
     public LevelData levelData;
+    public bool notInGame;
 
     #region Event Functions
     void Awake()
@@ -19,15 +20,21 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        if (notInGame)
+            return;
+        
         EnemySpawner.OnEnemySpawned.AddListener(OnEnemySpawned);
 
-        BobTheBuilder.AttemptBuild(BuildingName.EnemyTarget, Settings.instance.enemyTarget.position);
+        BobTheBuilder.AttemptBuild(BuildingName.EnemyTarget, levelData.enemyTargetLocation);
         
         StartCoroutine(RunGameLoop());
     }
 
     void Update()
     {
+        if (notInGame)
+            return;
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             StopCoroutine(RunGameLoop());
@@ -49,7 +56,7 @@ public class GameManager : MonoBehaviour
     public static UnityEvent OnWaitingForWave = new UnityEvent();
     public static UnityEvent OnPlayerWon = new UnityEvent();
 
-    public int currentWave = 0;
+    [HideInInspector] public int currentWave = 0;
 
     public static void SetGameState(GameState newState)
     {

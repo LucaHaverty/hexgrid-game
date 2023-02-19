@@ -37,6 +37,12 @@ public class HexTile : MonoBehaviour
         tileRend.color = type.colorRange.Evaluate(Random.Range(0f, 1f));
         outlineRend.color = Settings.instance.hexOutlineColor.Evaluate(Random.Range(0f, 1f));
 
+        if (type.voidTile)
+        {
+            tileRend.gameObject.SetActive(false);
+            outlineRend.gameObject.SetActive(false);
+        }
+        
         this.type = type;
         this.arrayPos = arrayPos;
         

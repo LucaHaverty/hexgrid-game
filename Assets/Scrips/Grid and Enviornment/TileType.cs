@@ -11,6 +11,7 @@ public class TileType : ScriptableObject
     
     public bool walkable;
     public bool buildable;
+    public bool voidTile;
     
     public float walkWeight;
 }

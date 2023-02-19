@@ -14,7 +14,7 @@ public abstract class AbstractEnemy : MonoBehaviour
     protected virtual void Start()
     {
         GetComponent<AbstractMovement>()
-            .SetTargetPos(GridManager.instance.FindCloseTile(Settings.instance.enemyTarget.position).worldPos);
+            .SetTargetPos(GridManager.instance.FindCloseTile(GameManager.instance.levelData.enemyTargetLocation).worldPos);
         currentState = EnemyState.Moving;
         
         GetComponent<Health>().OnDeath.AddListener(OnDeath);

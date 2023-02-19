@@ -1,0 +1,178 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7213492368795843018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7213492368795843016}
+  - component: {fileID: 7213492368795843019}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7213492368795843016
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213492368795843018}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.227429, y: -13.658774, z: 0.09377346}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7213492368795843019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213492368795843018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f60af8c110a39534dbeb01c5647348af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefab: {fileID: 2724687745083145532, guid: 1cdd3a1d5ea92aa4db2955a55a726c8f, type: 3}
+  width: 40
+  height: 22
+  tileScale: 0.5
+  animateColorSpeed: 0.5
+  colorSwitchAnimSpeed: 3
+  gridColor:
+    serializedVersion: 2
+    key0: {r: 0.05400496, g: 0.3490566, b: 0.08380815, a: 1}
+    key1: {r: 0.30296192, g: 0.4811321, b: 0.14706302, a: 1}
+    key2: {r: 0.5021705, g: 0.7169812, b: 0.23268066, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  baseTile: {fileID: 11400000, guid: d623d4d98bfceab45b94989b9a821929, type: 2}
+  tileTypes:
+  - {fileID: 11400000, guid: d623d4d98bfceab45b94989b9a821929, type: 2}
+  - {fileID: 11400000, guid: 421c6175b6bf91e45a68a47b5b446c42, type: 2}
+  - {fileID: 11400000, guid: 9816d2c1300b1ed4db9686537ce32017, type: 2}
+  - {fileID: 11400000, guid: addeb1e96c4e455459c881c751a036c3, type: 2}
+  - {fileID: 11400000, guid: 17eb572e41ad92147a51838c96a76688, type: 2}
+  - {fileID: 11400000, guid: e723ad24bb15bae4eab2c3658ef9ee53, type: 2}
+  hexOutlineColor:
+    serializedVersion: 2
+    key0: {r: 0.6181833, g: 0.49902096, b: 0.990566, a: 0}
+    key1: {r: 1, g: 0.56037736, b: 0.8408262, a: 0}
+    key2: {r: 1, g: 0.47039476, b: 0.5145053, a: 0}
+    key3: {r: 1, g: 0.76759744, b: 0.4377358, a: 0}
+    key4: {r: 0.4660377, g: 0.9812643, b: 1, a: 0}
+    key5: {r: 0.42830187, g: 0.722813, b: 1, a: 0}
+    key6: {r: 0.76792455, g: 1, b: 0.7844865, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 14649
+    ctime2: 29298
+    ctime3: 41634
+    ctime4: 50886
+    ctime5: 57825
+    ctime6: 65535
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 7
+    m_NumAlphaKeys: 2
+  targetPosDistanceThreshold: 0.01
+  towerFindEnemeisDelay: 0.25
+  autoDestroyBulletTime: 5
+  autoMissileDestroyTime: 3
+  damageFlashColor:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 0.764151, g: 0.052246597, b: 0, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  damageFlashTime: 0.3
+  buildings:
+  - {fileID: 11400000, guid: e1a087b6ba370184d8ae994fcc2b0245, type: 2}
+  - {fileID: 11400000, guid: 1f900e06272e5dd42ab02ab2757d1fe8, type: 2}
+  - {fileID: 11400000, guid: 3976983b9965f4c45b15072cd8ef1bdf, type: 2}
+  - {fileID: 11400000, guid: 0cca1566b0adf424f97684dce87698af, type: 2}
+  - {fileID: 11400000, guid: deedce66eb815524482084a26044fbf9, type: 2}
+  enemyContainer: {fileID: 0}
+  buildingContainer: {fileID: 0}
+  bulletContainer: {fileID: 0}
+  effectsContainer: {fileID: 0}
+  enemies:
+  - {fileID: 11400000, guid: 63ab9a59f949c2d489fc71d9370f67b4, type: 2}
+  - {fileID: 11400000, guid: 2037bd410129736438d441f0a8541970, type: 2}
+  - {fileID: 11400000, guid: 1d54ab620174cff4db6388d8fddb2250, type: 2}
+  - {fileID: 11400000, guid: 81a24779946f27f45bb0275c9f2c4a53, type: 2}
+  - {fileID: 11400000, guid: 676e402e8c1ea4b4387b1fed431a5270, type: 2}
+  - {fileID: 11400000, guid: 96c7df98022a4d74aa244ad2a5ccf2ef, type: 2}
+  radiusTimeBetweenSpawns: 0.1
+  radiusTimeBeforeSpawn: 2
+  radiusTimeAfterSpawn: 1
+  radiusCirclePrefab: {fileID: 1219789300657540625, guid: d1f80e743ed24bb44a17ddc01ba858db, type: 3}
+  lineRendCircleNumPoints: 40
+  buildingDestoryEffect: {fileID: 3000290913631945899, guid: 6a1fcc9e41e02794ba949aadd1ed16d6, type: 3}

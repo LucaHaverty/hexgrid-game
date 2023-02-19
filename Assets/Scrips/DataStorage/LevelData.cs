@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu()]
 public class LevelData : ScriptableObject
 {
+    [Header("General Settings")]
     public int initialBuildTime;
     public int repairTime;
     public int moneyGainPerWave;
@@ -18,4 +19,8 @@ public class LevelData : ScriptableObject
     public int minEnemyGroupSize;
     public int maxEnemyGroupSize;
     public float timeBetweenSpawns;
+
+    [Header("Map Data")] 
+    public TextAsset mapToLoad;
+    public Vector2 enemyTargetLocation;
 }

@@ -4,20 +4,18 @@ using UnityEngine;
 
 public class TerrainEditing : MonoBehaviour
 {
-    public TextAsset mapToLoad;
+    public string saveMapName;
     int selection;
 
     void Update()
     {
         UpdateSelection();
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKey(KeyCode.B))
             SetSelectedTile();
 
         if (Input.GetKeyDown(KeyCode.S))
-            MapSaveData.SaveMap(GridManager.instance.tiles, 0);
-        if (Input.GetKeyDown(KeyCode.L))
-            MapSaveData.LoadMap(mapToLoad);
+            MapSaveData.SaveMap(GridManager.instance.tiles, saveMapName);
     }
 
     void UpdateSelection()

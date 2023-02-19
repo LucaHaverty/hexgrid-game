@@ -14,6 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemyGroups:
+    - enemyTypes: 05000000
+      numEnemies: 20
+      timeBetweenSpawns: 0.05
+      timeIdleAfterGroup: 0
+  - enemyGroups:
     - enemyTypes: 04000000
       numEnemies: 5
       timeBetweenSpawns: 1

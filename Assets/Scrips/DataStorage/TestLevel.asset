@@ -12,11 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47249857262b3774486cb8deb8ce4cf6, type: 3}
   m_Name: TestLevel
   m_EditorClassIdentifier: 
-  buildTime: 1
+  initialBuildTime: 0
+  repairTime: 0
   moneyGainPerWave: 50
   startingMoney: 10000
   startingHealth: 5
+  randomPathfindWeight: 0
+  waveData: {fileID: 0}
   startingEnemyGroups: 5
   minEnemyGroupSize: 3
   maxEnemyGroupSize: 3
   timeBetweenSpawns: 0.25
+  mapToLoad: {fileID: 4900000, guid: a67de06b1cb116a42bb688bef52a16be, type: 3}

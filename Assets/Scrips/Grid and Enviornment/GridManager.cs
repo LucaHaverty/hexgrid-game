@@ -21,11 +21,14 @@ public class GridManager : MonoBehaviour
     public UnityEvent OnGridUpdate = new UnityEvent();
     public UnityEvent<HexTile> OnSelectedTileChange = new UnityEvent<HexTile>();
 
+    public bool createBlankMap;
+
     void Start()
     {
-        offset = CalculateGridOffset();
-        CreateGrid();
-        
+        if (createBlankMap)
+            CreateGrid();
+        else
+            MapSaveData.LoadMap(GameManager.instance.levelData.mapToLoad);
     }
 
     private void Update()
@@ -42,6 +45,8 @@ public class GridManager : MonoBehaviour
 
     void CreateGrid()
     {
+        offset = CalculateGridOffset();
+
         tiles = new HexTile[Settings.instance.width, Settings.instance.height];
         for (int y = 0; y < Settings.instance.height; y++)
         {

@@ -37,7 +37,11 @@ using UnityEngine;
                 int w = arrayY[0].contents.Length;
                 int h = arrayY.Length;
                 
-                HexTile[,] tiles = new HexTile[Settings.instance.width, Settings.instance.height];
+                Settings.instance.width = w;
+                Settings.instance.height = h;
+                GridManager.instance.offset = GridManager.instance.CalculateGridOffset();
+
+                HexTile[,] tiles = new HexTile[w, h];
                 for (int y = 0; y < h; y++)
                 {
                     for(int x = 0; x < w; x++)
@@ -85,19 +89,21 @@ using UnityEngine;
             return tiles;
         }*/
 
-        public static void SaveMap(HexTile[,] tiles, int index)
+        public static void SaveMap(HexTile[,] tiles, string saveMapName)
         {
             var dataToSave = new SaveData();
             dataToSave.Populate(tiles);
             
             string jsonData = JsonUtility.ToJson(dataToSave);
             
-            System.IO.File.WriteAllText("Assets/GridSaveData" + $"/GridData_{index}.json", jsonData);
+            System.IO.File.WriteAllText("Assets/GridSaveData" + $"/GridData_{saveMapName}.json", jsonData);
         }
 
         public static void LoadMap(TextAsset mapJSON)
         {
             SaveData mapData = JsonUtility.FromJson<SaveData>(mapJSON.text);
-            GridManager.instance.tiles = mapData.ToHexTiles();
+            var grid = mapData.ToHexTiles();
+
+            GridManager.instance.tiles = grid;
         }
     }

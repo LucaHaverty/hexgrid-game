@@ -58,9 +58,9 @@ public class EnemyFinder : MonoBehaviour
             case(Settings.EnemyFinderMode.CloseToTower):
                 return distFromTower;
             case(Settings.EnemyFinderMode.CloseToFlag):
-                return Vector2.Distance(enemyPos, Settings.instance.enemyTarget.position);
+                return Vector2.Distance(enemyPos, GameManager.instance.levelData.enemyTargetLocation);
             case(Settings.EnemyFinderMode.FarFromFlag):
-                return -Vector2.Distance(enemyPos, Settings.instance.enemyTarget.position);
+                return -Vector2.Distance(enemyPos, GameManager.instance.levelData.enemyTargetLocation);
         }
 
         Debug.LogError($"EnemyFinderMode '{mode.ToString()}' Failed");

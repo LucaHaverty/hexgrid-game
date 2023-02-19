@@ -53,7 +53,6 @@ public class Settings : MonoBehaviour
     public Transform enemyContainer;
     public Transform buildingContainer;
     public Transform bulletContainer;
-    public Transform enemyTarget;
     public Transform effectsContainer;
 
     [Header("Enemy Spawner")]
