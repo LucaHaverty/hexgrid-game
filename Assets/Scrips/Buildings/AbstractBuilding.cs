@@ -1,12 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
 public abstract class AbstractBuilding : MonoBehaviour
 {
     public Transform spriteTransform;
+    public BuildingName buildingName;
     
     protected List<AbstractEnemy> enemies = new List<AbstractEnemy>();
     
@@ -24,6 +26,9 @@ public abstract class AbstractBuilding : MonoBehaviour
     public virtual void Destroy()
     {
         parentTile.RemoveBuilding();
+        var particles = Instantiate(Settings.instance.buildingDestoryEffect, transform.position, quaternion.identity);
+        particles.transform.SetParent(Settings.instance.effectsContainer);
+        Destroy(particles, 1);
     }
 
     private void FindEnemies()

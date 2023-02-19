@@ -21,7 +21,8 @@ public class BobTheBuilder : MonoBehaviour
         
         AbstractBuilding newBuilding = Instantiate(type.prefab, parentTile.worldPos, Quaternion.identity).GetComponent<AbstractBuilding>();
         newBuilding.transform.SetParent(Settings.instance.buildingContainer);
-
+        newBuilding.buildingName = type.buildingName;
+        
         parentTile.AddBuilding(newBuilding);
         newBuilding.SetParentTile(parentTile);
         

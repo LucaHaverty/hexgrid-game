@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,6 +24,7 @@ public class ShopManager : MonoBehaviour
 
     private ShopItem[] shopItems;
     private ShopItem activeItem;
+    private bool sellSelected;
 
     void Start()
     {
@@ -59,12 +61,15 @@ public class ShopManager : MonoBehaviour
             item.SetBackgroundColor(selectedColor);
             activeItem = null;        
             OnNewItemSelected.Invoke(null);
+            sellSelected = false;
             
             ResetItems();
             ShopInfoDisplay.instance.HideInfoDiaply();
             return;
         }
         
+        sellSelected = item.sellBuildings;
+
         item.SetBackgroundColor(selectedColor);
         activeItem = item;
         OnNewItemSelected.Invoke(item);
@@ -92,4 +97,6 @@ public class ShopManager : MonoBehaviour
 
         return activeItem.buildingType;
     }
+
+    public bool getSellSelected() { return sellSelected; }
 }

@@ -20,14 +20,25 @@ public class BuildingPlacement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(0) && !Input.GetKeyDown(KeyCode.LeftShift) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButton(0) && !EventSystem.current.IsPointerOverGameObject())
             BuildSelected();
     }
 
     private void BuildSelected()
     {
+        if (ShopManager.instance.getSellSelected() && GridManager.instance.GetSelectedTile().hasBuilding)
+        {
+            AbstractBuilding toDestroy = GridManager.instance.GetSelectedTile().building;
+            if (toDestroy.buildingName == BuildingName.EnemyTarget)
+                return;
+
+            MoneyManager.instance.AttemptAddMoney(
+                Mathf.CeilToInt(Settings.instance.BuildingNameToType(toDestroy.buildingName).price * 0.75f));
+            toDestroy.Destroy();
+        }
+        
         var building = ShopManager.instance.GetSelectedBuilding();
-        if (!building)
+        if (building == null)
             return;
             
         bool succeeded = BobTheBuilder.AttemptBuild(building, cam.ScreenToWorldPoint(Input.mousePosition));

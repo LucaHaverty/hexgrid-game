@@ -21,9 +21,17 @@ public class ShopInfoDisplay : MonoBehaviour
     public void UpdateInfoDisplay(ShopItem item)
     {
         parent.SetActive(true);
-        nameText.text = item.buildingType.shopName;
-        priceText.text = item.buildingType.price.ToString();
 
+        if (!item.sellBuildings)
+        {
+            nameText.text = item.buildingType.shopName;
+            priceText.text = item.buildingType.price.ToString();
+        }
+        else
+        {
+            nameText.text = "Sell";
+            priceText.text = "75%";
+        }
         transform.position = new Vector2(item.transform.position.x, transform.position.y);
     }
 

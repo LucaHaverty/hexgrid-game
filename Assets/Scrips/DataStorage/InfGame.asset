@@ -15,7 +15,7 @@ MonoBehaviour:
   initialBuildTime: 5
   repairTime: 1
   moneyGainPerWave: 100
-  startingMoney: 500
+  startingMoney: 100000
   startingHealth: 5
   randomPathfindWeight: 3.5
   waveData: {fileID: 11400000, guid: 8cece415caee5604688a8c5cf70e7a54, type: 2}

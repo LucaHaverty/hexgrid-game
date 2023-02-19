@@ -9,6 +9,7 @@ public class ShopItem : MonoBehaviour, IPointerEnterHandler, IPointerClickHandle
 
     [SerializeField] private Image backgroundImage;
     [SerializeField] private string buildingName;
+    public bool sellBuildings;
 
     private ShopManager shopManager;
 

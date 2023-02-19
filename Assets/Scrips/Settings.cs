@@ -80,4 +80,5 @@ public class Settings : MonoBehaviour
 
     [Header("Other")] 
     public int lineRendCircleNumPoints;
+    public GameObject buildingDestoryEffect;
 }

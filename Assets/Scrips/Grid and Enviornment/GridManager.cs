@@ -24,19 +24,12 @@ public class GridManager : MonoBehaviour
     void Start()
     {
         offset = CalculateGridOffset();
-        highlightSprite.transform.localScale = new Vector2(Settings.instance.tileScale * highlightSprite.transform.localScale.x, Settings.instance.tileScale * highlightSprite.transform.localScale.y);
         CreateGrid();
         
-        tiles = MapSaveData.LoadMap(0);
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
-            MapSaveData.SaveMap(tiles, 0);
-        if (Input.GetKeyDown(KeyCode.L))
-            tiles = MapSaveData.LoadMap(0);
-
         TileSelection();
     }
     public void TileSelection()
