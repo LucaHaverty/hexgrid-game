@@ -20,7 +20,7 @@ public abstract class AbstractAttackBuilding : AbstractBuilding
         base.Start();
         GetComponent<EnemyFinder>().OnNewEnemyFound.AddListener(SetTarget);
         if (!disableTimedAttack) 
-            InvokeRepeating(nameof(AttemptAttack), attackCooldown, attackCooldown);
+            InvokeRepeating(nameof(AttemptAttack), firstAttackDelay, attackCooldown);
     }
 
     protected override void Update()

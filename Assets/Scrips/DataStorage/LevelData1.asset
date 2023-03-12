@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47249857262b3774486cb8deb8ce4cf6, type: 3}
+  m_Name: LevelData1
+  m_EditorClassIdentifier: 
+  levelID: -1
+  initialBuildTime: 5
+  repairTime: 1
+  moneyGainPerWave: 100
+  startingMoney: 500
+  startingHealth: 5
+  randomPathfindWeight: 3.5
+  waveData: {fileID: 11400000, guid: 8cece415caee5604688a8c5cf70e7a54, type: 2}
+  startingEnemyGroups: 2
+  minEnemyGroupSize: 3
+  maxEnemyGroupSize: 5
+  timeBetweenSpawns: 1
+  spawnMin:
+  - {x: -8.11, y: -4.6, z: 0}
+  - {x: -8.11, y: -4.6, z: 0}
+  - {x: -8.11, y: -4.6, z: 0}
+  spawnMax:
+  - {x: -6.02, y: 4.46, z: 0}
+  - {x: -6.02, y: 4.46, z: 0}
+  - {x: -6.02, y: 4.46, z: 0}
+  mapToLoad: {fileID: 4900000, guid: 51520e51e50f5f646ae63dd931e15c5b, type: 3}
+  enemyTargetLocation: {x: 6.13, y: 0}
+  camOffset: {x: 0.15, y: 0}
+  bossSpawnLocation: {x: -7.47, y: 1.06}
+  camSize: 5

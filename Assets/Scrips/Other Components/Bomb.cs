@@ -55,6 +55,9 @@ public class Bomb : MonoBehaviour
 
         foreach (Transform enemy in Settings.instance.enemyContainer)
         {
+            if (!enemy.GetComponent<AbstractEnemy>().visible)
+                continue;
+        
             float distFromTower = Vector2.Distance(transform.position, enemy.position);
             float distFromTarget = distFromTower;
 
@@ -70,6 +73,8 @@ public class Bomb : MonoBehaviour
 
     private void Explode()
     {
+        AudioManager.instance.Play("Explosion");
+
         DamageEnemiesInRange();
         
         GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);

@@ -65,8 +65,12 @@ public class LaserTurret : AbstractAttackBuilding
 
     private void UpdateLaserSprite(Vector2 targetPos, float length)
     {
-        laserSprite.gameObject.SetActive(true);
-        
+        if (!laserSprite.gameObject.activeSelf)
+        {
+            AudioManager.instance.Play("LaserActive");
+            laserSprite.gameObject.SetActive(true);
+        }
+
         laserSprite.position = Vector2.Lerp(firePoint.position, targetPos, 0.5f);
         laserSprite.localScale = new Vector2(length, laserSprite.localScale.y);
         laserSprite.rotation = partToRotate.rotation;

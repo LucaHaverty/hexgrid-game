@@ -19,6 +19,9 @@ public class BuildingPlacementPreview : MonoBehaviour
     [SerializeField] private SpriteRenderer previewRend;
     [SerializeField] private Transform rangeDisplay;
 
+    [SerializeField] private Color canPlaceBuildingColor;
+    [SerializeField] private Color canNotPlaceBuildingColor;
+
     public UnityEvent<HexTile> onBuildingHighlighted = new UnityEvent<HexTile>();
     public UnityEvent onNoBuildingHighlighted = new UnityEvent();
 
@@ -64,7 +67,7 @@ public class BuildingPlacementPreview : MonoBehaviour
     private void OnSelectedTileChange(HexTile selectedTile)
     {
         recentTile = selectedTile;
-        if (selectedTile == null)
+        if (selectedTile == null || selectedTile.type.voidTile)
         {
             parentObject.SetActive(false);
             onNoBuildingHighlighted.Invoke();
@@ -90,6 +93,10 @@ public class BuildingPlacementPreview : MonoBehaviour
         {
             parentObject.transform.position = selectedTile.worldPos;
         }
+
+        if (selectedTile.type.buildable)
+            previewRend.color = canPlaceBuildingColor;
+        else previewRend.color = canNotPlaceBuildingColor;
     }
 
     private void OnBuildingSelected(ShopItem building)

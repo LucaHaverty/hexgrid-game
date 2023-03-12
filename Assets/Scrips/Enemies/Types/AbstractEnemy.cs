@@ -6,18 +6,22 @@ using UnityEngine;
 [RequireComponent(typeof(Health),typeof(AbstractAttack),typeof(AbstractMovement))]
 public abstract class AbstractEnemy : MonoBehaviour
 {
-    [SerializeField]
-    private EnemyState currentState = EnemyState.Idle;
+    [SerializeField] private EnemyState currentState = EnemyState.Idle;
 
     [SerializeField] private EnemyType enemyType;
 
+    [HideInInspector] public bool visible = true;
+
     protected virtual void Start()
     {
+        visible = true;
         GetComponent<AbstractMovement>()
             .SetTargetPos(GridManager.instance.FindCloseTile(GameManager.instance.levelData.enemyTargetLocation).worldPos);
         currentState = EnemyState.Moving;
         
         GetComponent<Health>().OnDeath.AddListener(OnDeath);
+        
+        GetComponent<Health>().ApplyDifficulty();
     }
     protected virtual  void Update()
     {

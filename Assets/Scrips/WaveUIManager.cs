@@ -14,6 +14,8 @@ public class WaveUIManager : MonoBehaviour
     }
     
     public TextMeshProUGUI waveText;
+    public TextMeshProUGUI countdownText;
+    public TextMeshProUGUI startWaveButtonText;
     public GameObject startNextWaveButton;
     
     private int currentWave;
@@ -27,15 +29,35 @@ public class WaveUIManager : MonoBehaviour
 
     public void NextWaveStarted()
     {
+        if (autoStartRoutine != null) StopCoroutine(autoStartRoutine);
         startNextWaveButton.SetActive(false);
+        countdownText.gameObject.SetActive(false);
         currentWave++;
         waveText.text = $"{(currentWave)} / {numWaves}";
         
         GameManager.SetGameState(GameState.Spawning);
     }
 
-    private void OnWaitingForWave()
+    private Coroutine autoStartRoutine;
+    private void OnWaitingForWave(bool firstWave)
     {
         startNextWaveButton.SetActive(true);
+        if (firstWave) autoStartRoutine = StartCoroutine(AutoStartWave(Settings.instance.autoStartFirstWaveTime));
+        else autoStartRoutine = StartCoroutine(AutoStartWave(Settings.instance.autoStartWaveTime));
+
+        if (firstWave) startWaveButtonText.text = "Start Game";
+        else startWaveButtonText.text = "Start Next Wave";
+
+    }
+
+    private IEnumerator AutoStartWave(int time)
+    {
+        countdownText.gameObject.SetActive(true);
+        for (int i = 0; i < time; i++)
+        {
+            countdownText.text = (time - i - 1).ToString();
+            yield return new WaitForSeconds(1);
+        }
+        NextWaveStarted();
     }
 }

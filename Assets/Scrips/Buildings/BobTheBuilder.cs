@@ -11,9 +11,9 @@ public class BobTheBuilder : MonoBehaviour
         if (parentTile == null)
             return false;
 
-        if (parentTile.hasBuilding)
+        if (parentTile.hasBuilding || !parentTile.type.buildable)
             return false;
-        
+
         if (!MoneyManager.instance.AttemptSubtractMoney(type.price))
         {
             return false;
@@ -26,6 +26,7 @@ public class BobTheBuilder : MonoBehaviour
         parentTile.AddBuilding(newBuilding);
         newBuilding.SetParentTile(parentTile);
         
+        if (type.buildingName != BuildingName.EnemyTarget) AudioManager.instance.Play("PlaceBuilding");
         return true;
     }
 

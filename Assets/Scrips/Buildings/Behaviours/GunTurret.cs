@@ -14,6 +14,7 @@ public class GunTurret : AbstractAttackBuilding
     {
         base.Start();
         partToRotate.transform.localScale *= Settings.instance.tileScale;
+        firstAttackDelay = 0.25f;
     }
 
     protected override void RotateTurret()
@@ -27,7 +28,7 @@ public class GunTurret : AbstractAttackBuilding
     private bool justShot1;
     protected override void Attack()
     {
-        //AudioManager.instance.Play("GunFire");
+        AudioManager.instance.Play("GunFire");
         
         Vector2 firePos = justShot1 ? firePoint2.position : firePoint1.position;
         justShot1 = !justShot1;

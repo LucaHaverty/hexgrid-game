@@ -12,6 +12,7 @@ public abstract class AbstractMovement : MonoBehaviour
 
     protected virtual void Start()
     {
+        speed *= Mathf.Lerp(1 - Settings.instance.enemySpeedDiffScale, 1 + Settings.instance.enemySpeedDiffScale, DifficultyManager.difficulty);
         prevPosition = transform.position;
     }
 

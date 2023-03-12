@@ -76,8 +76,14 @@ public class Settings : MonoBehaviour
     public float radiusTimeBeforeSpawn;
     public float radiusTimeAfterSpawn;
     public GameObject radiusCirclePrefab;
-
+    
     [Header("Other")] 
     public int lineRendCircleNumPoints;
     public GameObject buildingDestoryEffect;
+    public int autoStartWaveTime;
+    public int autoStartFirstWaveTime;
+
+    [Header("Difficulty Scaling")] 
+    public float enemyHealthDiffScale;
+    public float enemySpeedDiffScale;
 }

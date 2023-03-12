@@ -24,5 +24,8 @@ public enum EnemyName
     BombEnemy,
     AttackEnemy,
     BasicEnemy,
-    EasyBoss
+    EasyBoss,
+    MedBoss,
+    HardBoss,
+    InvisEnemy
 }

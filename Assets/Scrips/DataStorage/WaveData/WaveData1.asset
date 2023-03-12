@@ -1,0 +1,93 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f857f9add4c35d340a519f9b24afa471, type: 3}
+  m_Name: WaveData1
+  m_EditorClassIdentifier: 
+  waves:
+  - enemyGroups:
+    - enemyTypes: 04000000
+      numEnemies: 5
+      timeBetweenSpawns: 1
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 04000000
+      numEnemies: 3
+      timeBetweenSpawns: 1
+      timeIdleAfterGroup: 2
+    - enemyTypes: 04000000
+      numEnemies: 5
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 04000000
+      numEnemies: 5
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 2
+    - enemyTypes: 00000000
+      numEnemies: 5
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 00000000
+      numEnemies: 5
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 2
+    - enemyTypes: 0400000000000000
+      numEnemies: 10
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 01000000
+      numEnemies: 2
+      timeBetweenSpawns: 1
+      timeIdleAfterGroup: 3
+    - enemyTypes: 0400000000000000
+      numEnemies: 10
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 01000000
+      numEnemies: 5
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 2
+    - enemyTypes: 0400000000000000
+      numEnemies: 8
+      timeBetweenSpawns: 0.25
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 01000000
+      numEnemies: 5
+      timeBetweenSpawns: 0.25
+      timeIdleAfterGroup: 4
+    - enemyTypes: 0400000000000000
+      numEnemies: 15
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 02000000
+      numEnemies: 3
+      timeBetweenSpawns: 1
+      timeIdleAfterGroup: 0
+  - enemyGroups:
+    - enemyTypes: 02000000
+      numEnemies: 3
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 2
+    - enemyTypes: 000000000000000004000000
+      numEnemies: 10
+      timeBetweenSpawns: 0.5
+      timeIdleAfterGroup: 2
+  - enemyGroups:
+    - enemyTypes: 05000000
+      numEnemies: 1
+      timeBetweenSpawns: 0
+      timeIdleAfterGroup: 0

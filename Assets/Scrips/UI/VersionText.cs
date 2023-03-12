@@ -10,6 +10,6 @@ public class VersionText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI text;
     void Start()
     {
-        text.text = $"version {PlayerSettings.bundleVersion}";
+        text.text = $"beta version {Application.version}";
     }
 }

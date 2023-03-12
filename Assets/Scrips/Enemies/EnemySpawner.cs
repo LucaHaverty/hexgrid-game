@@ -15,14 +15,17 @@ public class EnemySpawner : MonoBehaviour
 
     //public EnemyName[] testEnemies;
 
-    public static void SpawnSingleEnemy(EnemyType type, Vector2 position)
+    private static void SpawnSingleEnemy(EnemyType type, Vector2 position)
     {
         Instantiate(type.prefab, position, Quaternion.identity).transform.SetParent(Settings.instance.enemyContainer);
         OnEnemySpawned.Invoke();
+        AudioManager.instance.Play("EnemySpawn");
     }
 
     public static void SpawnSingleEnemy(EnemyName enemyName, Vector2 position)
     {
+        if (enemyName == EnemyName.EasyBoss || enemyName == EnemyName.MedBoss || enemyName == EnemyName.HardBoss)
+            position = GameManager.instance.levelData.bossSpawnLocation;
         SpawnSingleEnemy(Settings.instance.EnemyNameToType(enemyName), position);
     }
 

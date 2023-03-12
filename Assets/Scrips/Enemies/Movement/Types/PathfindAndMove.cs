@@ -15,6 +15,7 @@ public class PathfindAndMove : AbstractMovement
 
     protected override void Start()
     {
+        base.Start();
         LateStart();
     }
 

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuParalax : MonoBehaviour
 {
     [SerializeField] private Transform[] layers;
     [SerializeField] private float[] layerSpeeds;
+    [SerializeField] private ScreenEffectsManager sem;
     private Vector2[] startPos;
     private Camera cam;
 
@@ -29,5 +31,11 @@ public class MenuParalax : MonoBehaviour
         {
             layers[i].position = startPos[i] + (mousePos * -layerSpeeds[i]);
         }
+    }
+
+    public void StartLevel(LevelData levelData)
+    {
+        LevelDataHolder.data = levelData;
+        sem.LoadScene(1);
     }
 }

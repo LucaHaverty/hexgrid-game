@@ -123,6 +123,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &260120106
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 260120107}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &260120107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 260120106}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.526633, y: 0.36277232, z: 0.04245063}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,7 +372,7 @@ MonoBehaviour:
   OnSelectedTileChange:
     m_PersistentCalls:
       m_Calls: []
-  createBlankMap: 1
+  createBlankMap: 0
 --- !u!4 &719938845
 Transform:
   m_ObjectHideFlags: 0
@@ -403,8 +434,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fd04c79671d9444b893a2d1cfcadd53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelData: {fileID: 11400000, guid: 2f69ccff66349544194ad2cd2476d7e2, type: 2}
+  levelData: {fileID: 11400000, guid: 7079794635d2da948b06a44763f36009, type: 2}
   notInGame: 1
+  mainMenu: 0
   currentWave: 0
 --- !u!4 &1662424823
 Transform:
@@ -431,6 +463,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1701934454}
   - component: {fileID: 1701934455}
+  - component: {fileID: 1701934456}
   m_Layer: 0
   m_Name: PlayerControls
   m_TagString: Untagged
@@ -465,7 +498,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5f369d0d6ab6094c97bcbc6030882c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saveMapName: level1
+  saveMapName: NoBrakePLZZZ
+--- !u!114 &1701934456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1701934453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcf5a9cc59624447a4ff114762ba595, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 0.017
 --- !u!1001 &7213492368050710822
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -524,8 +570,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7213492368795843019, guid: 23681530bb61ae5428f0f00a68e8c669, type: 3}
       propertyPath: width
-      value: 34
+      value: 55
       objectReference: {fileID: 0}
+    - target: {fileID: 7213492368795843019, guid: 23681530bb61ae5428f0f00a68e8c669, type: 3}
+      propertyPath: height
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7213492368795843019, guid: 23681530bb61ae5428f0f00a68e8c669, type: 3}
+      propertyPath: baseTile
+      value: 
+      objectReference: {fileID: 11400000, guid: d623d4d98bfceab45b94989b9a821929, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

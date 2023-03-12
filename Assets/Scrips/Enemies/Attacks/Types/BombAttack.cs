@@ -31,6 +31,8 @@ public class BombAttack : AbstractAttack
             float appliedDamage = Mathf.Lerp(damage, damage / radialDamageFalloff, distance / range);
             building.GetComponent<Health>().Damage(damage);
         }
+        
+        AudioManager.instance.Play("Explosion");
 
         GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);
         effect.transform.SetParent(Settings.instance.effectsContainer);

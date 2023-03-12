@@ -29,6 +29,9 @@ public class TerrainEditing : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.Alpha4)) selection = 3;
         else if (Input.GetKeyDown(KeyCode.Alpha5)) selection = 4;
         else if (Input.GetKeyDown(KeyCode.Alpha6)) selection = 5;
+        else if (Input.GetKeyDown(KeyCode.Alpha7)) selection = 6;
+        else if (Input.GetKeyDown(KeyCode.Alpha8)) selection = 7;
+        else if (Input.GetKeyDown(KeyCode.Alpha8)) selection = 9;
     }
 
     void SetSelectedTile()

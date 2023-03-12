@@ -29,9 +29,7 @@ public class EnemyFinder : MonoBehaviour
             float distFromTower = Vector2.Distance(transform.position, enemy.position);
             float distFromTarget = GetDistFromTarget(enemy.transform.position, distFromTower);
 
-            if (distFromTower > range)
-                continue;
-            if (distFromTarget >= currentDistance)
+            if (distFromTower > range || distFromTarget >= currentDistance || !enemy.GetComponent<AbstractEnemy>().visible)
                 continue;
 
             currentEnemy = enemy;

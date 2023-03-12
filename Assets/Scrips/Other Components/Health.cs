@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Scrips;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -40,5 +41,10 @@ public class Health : MonoBehaviour
     public float GetPercentHealth()
     {
         return health / startingHealth;
+    }
+
+    public void ApplyDifficulty()
+    {
+        health *= Mathf.Lerp(1 - Settings.instance.enemyHealthDiffScale, 1 + Settings.instance.enemyHealthDiffScale, DifficultyManager.difficulty);
     }
 }

@@ -88,6 +88,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: addeb1e96c4e455459c881c751a036c3, type: 2}
   - {fileID: 11400000, guid: 17eb572e41ad92147a51838c96a76688, type: 2}
   - {fileID: 11400000, guid: e723ad24bb15bae4eab2c3658ef9ee53, type: 2}
+  - {fileID: 11400000, guid: 6042a42b57f54d14bb55a97f43abe0da, type: 2}
   hexOutlineColor:
     serializedVersion: 2
     key0: {r: 0.6181833, g: 0.49902096, b: 0.990566, a: 0}

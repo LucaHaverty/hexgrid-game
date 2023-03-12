@@ -11,15 +11,23 @@ public class GameManager : MonoBehaviour
 
     public LevelData levelData;
     public bool notInGame;
+    public bool mainMenu;
 
     #region Event Functions
     void Awake()
     {
+        if (LevelDataHolder.data != null) levelData = LevelDataHolder.data;
         instance = this;
     }
 
     void Start()
     {
+        if (mainMenu)
+            return;
+        
+        Camera.main.transform.position = new Vector3(levelData.camOffset.x, levelData.camOffset.y, -10);
+        Camera.main.orthographicSize = levelData.camSize;
+        
         if (notInGame)
             return;
         
@@ -53,7 +61,7 @@ public class GameManager : MonoBehaviour
     public static UnityEvent OnWaveBeat = new UnityEvent();
     public static UnityEvent OnPlayerLose = new UnityEvent();
     public static UnityEvent OnStartSpawning = new UnityEvent();
-    public static UnityEvent OnWaitingForWave = new UnityEvent();
+    public static UnityEvent<bool> OnWaitingForWave = new UnityEvent<bool>();
     public static UnityEvent OnPlayerWon = new UnityEvent();
 
     [HideInInspector] public int currentWave = 0;
@@ -67,7 +75,8 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case(GameState.WaitingForWave):
-                OnWaitingForWave.Invoke();
+                if (GameManager.instance.currentWave == 0) OnWaitingForWave.Invoke(true);
+                else OnWaitingForWave.Invoke(false);
                 break;
             case(GameState.Spawning):
                 OnStartSpawning.Invoke();
@@ -121,8 +130,9 @@ public class GameManager : MonoBehaviour
                 yield break;
             
             SetGameState(GameState.WaitingForWave);
-            MoneyManager.instance.StartCoroutine(
-                MoneyManager.instance.WaveOverCoinAnim(Mathf.FloorToInt(levelData.moneyGainPerWave / 5f), 5));
+            /*MoneyManager.instance.StartCoroutine(
+                MoneyManager.instance.WaveOverCoinAnim(Mathf.FloorToInt(levelData.moneyGainPerWave / 5f), 5));*/
+            MoneyManager.instance.AttemptAddMoney(levelData.moneyGainPerWave);
         }
         
         

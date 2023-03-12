@@ -49,7 +49,7 @@ public class WaveSpawner : MonoBehaviour
         {
             for (int enemy = 0; enemy < group.numEnemies; enemy++)
             {
-                EnemySpawner.SpawnSingleEnemy(group.GetEnemyType(), new Vector2(Random.Range(-6.5f, -7.5f), Random.Range(3.6f, -3.6f)));
+                EnemySpawner.SpawnSingleEnemy(group.GetEnemyType(), GameManager.instance.levelData.GetSpawnLocation());
                 yield return new WaitForSeconds(group.timeBetweenSpawns);
             }
 

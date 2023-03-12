@@ -17,8 +17,10 @@ public class CameraController : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.instance.levelData.levelID == 0)
+            this.enabled = false;
+        
         cam = Camera.main;
-
         StartCoroutine(lateStart());
     }
 
@@ -27,7 +29,6 @@ public class CameraController : MonoBehaviour
         yield return new WaitForEndOfFrame();
         clampPos = new Vector2(Settings.instance.width * Settings.instance.tileScale / 2f,
             Settings.instance.height * Settings.instance.tileScale / 2f);
-        Debug.Log(clampPos);
     }
 
     void Update()
