@@ -15,8 +15,8 @@ MonoBehaviour:
   levelID: -1
   initialBuildTime: 5
   repairTime: 1
-  moneyGainPerWave: 100
-  startingMoney: 500
+  moneyGainPerWave: 180
+  startingMoney: 750
   startingHealth: 5
   randomPathfindWeight: 3.5
   waveData: {fileID: 11400000, guid: 8cece415caee5604688a8c5cf70e7a54, type: 2}
@@ -25,15 +25,11 @@ MonoBehaviour:
   maxEnemyGroupSize: 5
   timeBetweenSpawns: 1
   spawnMin:
-  - {x: -8.11, y: -4.6, z: 0}
-  - {x: -8.11, y: -4.6, z: 0}
-  - {x: -8.11, y: -4.6, z: 0}
+  - {x: -7.27, y: -0.37, z: 0}
   spawnMax:
-  - {x: -6.02, y: 4.46, z: 0}
-  - {x: -6.02, y: 4.46, z: 0}
-  - {x: -6.02, y: 4.46, z: 0}
-  mapToLoad: {fileID: 4900000, guid: 51520e51e50f5f646ae63dd931e15c5b, type: 3}
-  enemyTargetLocation: {x: 6.13, y: 0}
+  - {x: -5.27, y: 3.34, z: 0}
+  mapToLoad: {fileID: 4900000, guid: 1964d6d459ad0bc47a005f5816933a89, type: 3}
+  enemyTargetLocation: {x: 5.2, y: 0}
   camOffset: {x: 0.15, y: 0}
-  bossSpawnLocation: {x: -7.47, y: 1.06}
-  camSize: 5
+  bossSpawnLocation: {x: -6.01, y: 2.81}
+  camSize: 5.554204

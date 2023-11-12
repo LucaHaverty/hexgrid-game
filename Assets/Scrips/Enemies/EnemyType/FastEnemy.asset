@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyName: 0
   prefab: {fileID: 6342835816784775566, guid: 2b9225421df8ba64b88de3c59b1d59b7, type: 3}
-  coinsDropped: 5
+  coinsDropped: 2

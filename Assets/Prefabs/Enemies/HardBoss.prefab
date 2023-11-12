@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritesParent: {fileID: 4352267686165041310}
   rotateSpeed: 50
-  alphaFalloff: 0.3
+  alphaFalloff: 0.1
   baseAlphaOffMainSprite: 0
 --- !u!1 &2070054277974580344
 GameObject:
@@ -375,6 +375,7 @@ GameObject:
   - component: {fileID: 1838916194002580505}
   - component: {fileID: 8405524190167344216}
   - component: {fileID: 6207907489945874228}
+  - component: {fileID: 6347314704231441678}
   m_Layer: 6
   m_Name: HardBoss
   m_TagString: Untagged
@@ -398,7 +399,7 @@ Transform:
   - {fileID: 7607366396024208618}
   - {fileID: 4352267686165041310}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1582377381223503791
 MonoBehaviour:
@@ -533,6 +534,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8992878, y: 0.89589214}
   m_EdgeRadius: 0
+--- !u!114 &6347314704231441678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3852276184960892884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c365b8149d1b3f48ad0071e9df1dc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToFlash:
+  - {fileID: 5542394978724284616}
+  - {fileID: 4595877204855226903}
+  - {fileID: 6104885882652231084}
+  - {fileID: 6618700662727033562}
 --- !u!1 &4664904372328913915
 GameObject:
   m_ObjectHideFlags: 0

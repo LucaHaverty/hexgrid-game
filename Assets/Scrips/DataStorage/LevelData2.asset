@@ -15,7 +15,7 @@ MonoBehaviour:
   levelID: -1
   initialBuildTime: 5
   repairTime: 1
-  moneyGainPerWave: 275
+  moneyGainPerWave: 200
   startingMoney: 1500
   startingHealth: 5
   randomPathfindWeight: 3.5

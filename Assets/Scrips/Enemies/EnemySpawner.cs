@@ -17,6 +17,11 @@ public class EnemySpawner : MonoBehaviour
 
     private static void SpawnSingleEnemy(EnemyType type, Vector2 position)
     {
+        if (GridManager.instance.FindCloseTile(position).type.tileName == "Void")
+        {
+            Debug.LogError("Tried To Spawn Enemy In Void");
+            return;
+        }
         Instantiate(type.prefab, position, Quaternion.identity).transform.SetParent(Settings.instance.enemyContainer);
         OnEnemySpawned.Invoke();
         AudioManager.instance.Play("EnemySpawn");

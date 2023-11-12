@@ -24,7 +24,7 @@ public class WaveUIManager : MonoBehaviour
     private void Start()
     {
         numWaves = GameManager.instance.levelData.waveData.numWaves;
-        waveText.text = $"";
+        waveText.text = $"0 / {numWaves}";
     }
 
     public void NextWaveStarted()
@@ -46,7 +46,7 @@ public class WaveUIManager : MonoBehaviour
         else autoStartRoutine = StartCoroutine(AutoStartWave(Settings.instance.autoStartWaveTime));
 
         if (firstWave) startWaveButtonText.text = "Start Game";
-        else startWaveButtonText.text = "Start Next Wave";
+        else startWaveButtonText.text = "Start Wave";
 
     }
 

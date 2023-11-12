@@ -5345,7 +5345,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 64
-  damagePerSecond: 13
+  damagePerSecond: 10
   toDamage: {fileID: 0}
 --- !u!114 &8598012243466436022
 MonoBehaviour:

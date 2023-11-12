@@ -40,6 +40,16 @@ public class BuildingPlacementPreview : MonoBehaviour
         BuildingPlacement.instance.OnBuildingPlaced.AddListener(OnBuildingPlaced);
         
         previewObject.transform.localScale *= Settings.instance.tileScale;
+        
+        GameManager.OnPlayerWon.AddListener(() => {
+            parentObject.SetActive(false);
+            this.enabled = false;
+        });
+        GameManager.OnPlayerLose.AddListener(() => {
+            parentObject.SetActive(false);
+            this.enabled = false;
+            Destroy(this);
+        });
     }
 
     private void Update()
@@ -142,6 +152,7 @@ public class BuildingPlacementPreview : MonoBehaviour
         
         highlightObject.SetActive(true);
         previewObject.SetActive(false);
+        sellObject.SetActive(false);
     }
 
     private void OnBuildingPlaced()

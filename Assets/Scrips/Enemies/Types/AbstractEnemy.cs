@@ -36,6 +36,18 @@ public abstract class AbstractEnemy : MonoBehaviour
     public void OnDeath()
     {
         GameManager.OnEnemyKilled(enemyType, transform.position);
+        
+        GameObject particles = Instantiate(Settings.instance.enemyDeathEffect, Settings.instance.effectsContainer, true);
+        Destroy(particles, 2);
+        
+        particles.transform.position = transform.position;
+        particles.transform.localScale *= GetComponentInChildren<RotateSprite>().spritesParent.transform.localScale.x;
+        
+        var mModule = particles.GetComponent<ParticleSystem>().main;
+        Color color = GetComponentInChildren<RotateSprite>().spritesParent
+            .GetChild(0).GetComponent<SpriteRenderer>().color;
+        mModule.startColor = new ParticleSystem.MinMaxGradient(color, color - new Color(0.2f, 0.2f, 0.2f));
+        
         TriggerDestroy();
     }
 

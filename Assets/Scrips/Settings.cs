@@ -26,6 +26,7 @@ public class Settings : MonoBehaviour
     public float autoDestroyBulletTime;
     public float autoMissileDestroyTime;
     public Gradient damageFlashColor;
+    public Color enemyDamageColor;
     public float damageFlashTime;
     public enum EnemyFinderMode
     {
@@ -80,6 +81,7 @@ public class Settings : MonoBehaviour
     [Header("Other")] 
     public int lineRendCircleNumPoints;
     public GameObject buildingDestoryEffect;
+    public GameObject enemyDeathEffect;
     public int autoStartWaveTime;
     public int autoStartFirstWaveTime;
 

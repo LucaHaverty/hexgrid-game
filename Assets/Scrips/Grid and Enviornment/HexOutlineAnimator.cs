@@ -15,6 +15,10 @@ public class HexOutlineAnimator : MonoBehaviour
 
     void Start()
     {
+        float camScale = (Camera.main.orthographicSize / 5);
+        startPosition *= camScale;
+        moveSpeed *= camScale;
+        
         hexGrid = GridManager.instance;
         StartCoroutine(PlayAnimation());
     }

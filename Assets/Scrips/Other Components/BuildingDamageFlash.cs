@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
-public class DamageFlash : MonoBehaviour
+public class BuildingDamageFlash : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer[] spritesToFlash;
     private float flashSpeed;

@@ -19,6 +19,10 @@ public abstract class AbstractBuilding : MonoBehaviour
     {
         spriteTransform.localScale *= Settings.instance.tileScale;
         GetComponent<Health>().OnDeath.AddListener(Destroy);
+        
+        GameObject particles = Instantiate(Settings.instance.buildingDestoryEffect, transform.position, quaternion.identity);
+        particles.transform.SetParent(Settings.instance.effectsContainer);
+        Destroy(particles, 1);
     }
 
     protected virtual void Update() { }
@@ -26,7 +30,8 @@ public abstract class AbstractBuilding : MonoBehaviour
     public virtual void Destroy()
     {
         parentTile.RemoveBuilding();
-        var particles = Instantiate(Settings.instance.buildingDestoryEffect, transform.position, quaternion.identity);
+        
+        GameObject particles = Instantiate(Settings.instance.buildingDestoryEffect, transform.position, quaternion.identity);
         particles.transform.SetParent(Settings.instance.effectsContainer);
         Destroy(particles, 1);
     }

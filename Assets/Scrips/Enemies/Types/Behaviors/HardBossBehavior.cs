@@ -64,6 +64,7 @@ public class HardBossBehavior : AbstractEnemy
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.Euler(0, 0, angle+90f));
             bullet.transform.SetParent(Settings.instance.bulletContainer);
             bullet.GetComponent<Rigidbody2D>().velocity = bullet.transform.up*bulletSpeed;
+            bullet.transform.Rotate(0, 0, 90);
             
             Destroy(bullet, Settings.instance.autoDestroyBulletTime);
         }

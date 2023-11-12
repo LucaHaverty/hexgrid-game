@@ -94,4 +94,10 @@ public class Utils
         }
         lineRend.SetPositions(positions);
     }
+
+    /** <returns>A color with the givenalpha */
+    public static Color ColorWithAlpha(Color color, float alpha)
+    {
+        return new Color(color.r, color.g, color.b, alpha);
+    }
 }

@@ -18,21 +18,25 @@ public class GameManager : MonoBehaviour
     {
         if (LevelDataHolder.data != null) levelData = LevelDataHolder.data;
         instance = this;
+        
+        if (mainMenu)
+            return;
+        
+        Camera.main.transform.position = new Vector3(levelData.camOffset.x, levelData.camOffset.y, -10);
+        Camera.main.orthographicSize = levelData.camSize;
     }
 
     void Start()
     {
         if (mainMenu)
             return;
-        
-        Camera.main.transform.position = new Vector3(levelData.camOffset.x, levelData.camOffset.y, -10);
-        Camera.main.orthographicSize = levelData.camSize;
-        
+
         if (notInGame)
             return;
         
         EnemySpawner.OnEnemySpawned.AddListener(OnEnemySpawned);
 
+        state = GameState.None;
         BobTheBuilder.AttemptBuild(BuildingName.EnemyTarget, levelData.enemyTargetLocation);
         
         StartCoroutine(RunGameLoop());
@@ -45,10 +49,12 @@ public class GameManager : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.R))
         {
-            StopCoroutine(RunGameLoop());
-            enemiesAlive = 0;
-            SetGameState(GameState.None);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            RestartCurrentLevel();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            QuitToMenu();
         }
 
         if (state == GameState.DoneSpawning && Settings.instance.enemyContainer.childCount == 0)
@@ -75,7 +81,7 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case(GameState.WaitingForWave):
-                if (GameManager.instance.currentWave == 0) OnWaitingForWave.Invoke(true);
+                if (instance.currentWave == 0) OnWaitingForWave.Invoke(true);
                 else OnWaitingForWave.Invoke(false);
                 break;
             case(GameState.Spawning):
@@ -84,6 +90,7 @@ public class GameManager : MonoBehaviour
             case(GameState.DoneSpawning):
                 break;
             case(GameState.PlayerLost):
+                instance.KillAllEnemies();
                 OnPlayerLose.Invoke();
                 break;
             case(GameState.WaveBeat):
@@ -92,6 +99,13 @@ public class GameManager : MonoBehaviour
             case(GameState.PlayerWon):
                 OnPlayerWon.Invoke();
                 break;
+        }
+    }
+    
+    private void KillAllEnemies() {
+        foreach (Transform enemy in Settings.instance.enemyContainer)
+        {
+            enemy.GetComponent<AbstractEnemy>().TriggerDestroy();
         }
     }
     
@@ -112,13 +126,13 @@ public class GameManager : MonoBehaviour
 
     IEnumerator RunGameLoop()
     {
-        while (currentWave < levelData.waveData.waves.Length-1)
+        while (currentWave < levelData.waveData.waves.Length)
         {
             SetGameState(GameState.WaitingForWave);
 
             while (state != GameState.Spawning)
                 yield return null;
-            
+
             currentWave++;
 
             while (state == GameState.Spawning || state == GameState.DoneSpawning)
@@ -127,15 +141,35 @@ public class GameManager : MonoBehaviour
             }
 
             if (state == GameState.PlayerLost)
+            {
                 yield break;
-            
-            SetGameState(GameState.WaitingForWave);
-            /*MoneyManager.instance.StartCoroutine(
-                MoneyManager.instance.WaveOverCoinAnim(Mathf.FloorToInt(levelData.moneyGainPerWave / 5f), 5));*/
+            }
+
+            if (currentWave == levelData.waveData.waves.Length)
+                SetGameState(GameState.PlayerWon);
             MoneyManager.instance.AttemptAddMoney(levelData.moneyGainPerWave);
         }
-        
-        
+    }
+
+    private void ResetGameManager()
+    {
+        StopCoroutine(RunGameLoop());
+        enemiesAlive = 0;
+        //SetGameState(GameState.None);
+        currentWave = 0;
+    }
+    
+    public void RestartCurrentLevel()
+    {
+        ResetGameManager();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        //StartCoroutine(RunGameLoop());
+    }
+
+    public void QuitToMenu()
+    {
+        ResetGameManager();
+        SceneManager.LoadScene(0);
     }
 }
 

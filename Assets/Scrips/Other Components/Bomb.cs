@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using EZCameraShake;
 using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Bomb : MonoBehaviour
@@ -74,6 +74,7 @@ public class Bomb : MonoBehaviour
     private void Explode()
     {
         AudioManager.instance.Play("Explosion");
+        CameraShaker.Instance.ShakeOnce(1.6f, 5f, .1f, .5f);
 
         DamageEnemiesInRange();
         

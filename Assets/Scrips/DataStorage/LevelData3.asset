@@ -38,8 +38,8 @@ MonoBehaviour:
   - {x: -13.04, y: -1.06, z: 0}
   - {x: -8.14, y: 1.89, z: 0}
   - {x: -5.63, y: 6.41, z: 0}
-  mapToLoad: {fileID: 4900000, guid: e2f5b4d51a1326a43b709d44973ece58, type: 3}
+  mapToLoad: {fileID: 4900000, guid: 77dc9b81363158a4f92f6b9489eb90b5, type: 3}
   enemyTargetLocation: {x: 11.2, y: -3.8}
   camOffset: {x: 0, y: 0}
   bossSpawnLocation: {x: -9.8, y: -5.7}
-  camSize: 8
+  camSize: 8.8

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using EZCameraShake;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ public class BombAttack : AbstractAttack
             float appliedDamage = Mathf.Lerp(damage, damage / radialDamageFalloff, distance / range);
             building.GetComponent<Health>().Damage(damage);
         }
-        
+        CameraShaker.Instance.ShakeOnce(1.6f, 5f, .1f, .5f);
         AudioManager.instance.Play("Explosion");
 
         GameObject effect = Instantiate(radialExplosionEffect, transform.position, Quaternion.identity);

@@ -7,6 +7,8 @@ public class BobTheBuilder : MonoBehaviour
 {
     public static bool AttemptBuild(BuildingType type, Vector2 pos)
     {
+        if (GameManager.state == GameState.PlayerWon || GameManager.state == GameState.PlayerLost) return false;
+        
         HexTile parentTile = GridManager.instance.FindCloseTile(pos);
         if (parentTile == null)
             return false;

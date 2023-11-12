@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3419846063190177974}
   - component: {fileID: 4780277290769311991}
   - component: {fileID: 6977893941064410011}
+  - component: {fileID: 8922100400817658678}
   m_Layer: 6
   m_Name: InvisEnemy
   m_TagString: Untagged
@@ -38,7 +39,7 @@ Transform:
   - {fileID: 6873148372418523205}
   - {fileID: 763011659241102385}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3638136148927633115
 MonoBehaviour:
@@ -170,6 +171,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.59737563, y: 0.593776}
   m_EdgeRadius: 0
+--- !u!114 &8922100400817658678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254057205400155003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c365b8149d1b3f48ad0071e9df1dc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToFlash:
+  - {fileID: 8798368698853114983}
+  - {fileID: 664081515872603832}
+  - {fileID: 7082040381763995907}
+  - {fileID: 7866317705013857909}
 --- !u!1 &3047476851950260439
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class MoneyManager : MonoBehaviour
 
     void Start()
     {
+        coinTarget.transform.position *= (Camera.main.orthographicSize / 5);
         money = GameManager.instance.levelData.startingMoney;
         moneyText.text = money.ToString();
     }

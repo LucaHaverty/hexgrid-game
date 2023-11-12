@@ -34,7 +34,7 @@ public class LevelData : ScriptableObject
             Mathf.Lerp(min.y, max.y, Random.Range(0f, 1f)));
 
         var tile = GridManager.instance.FindCloseTile(position);
-        if (tile != null && tile.type.walkable)
+        if (tile != null && tile.type.tileName == "Dirt")
             return position;
         else return GetSpawnLocation();
     }

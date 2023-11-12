@@ -72,9 +72,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 448993994a623334da0ab9956c0f0375, type: 3}
-  m_Color: {r: 0.8962264, g: 0.57827127, b: 0.502225, a: 1}
+  m_Color: {r: 0.7075472, g: 0.4242981, b: 0.31639373, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 448993994a623334da0ab9956c0f0375, type: 3}
-  m_Color: {r: 0.8962264, g: 0.57827127, b: 0.502225, a: 1}
+  m_Color: {r: 0.5660378, g: 0.3229231, b: 0.2317551, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -240,9 +240,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 7482667652216324306, guid: 448993994a623334da0ab9956c0f0375, type: 3}
-  m_Color: {r: 0.8962264, g: 0.57827127, b: 0.502225, a: 1}
+  m_Color: {r: 0.8113208, g: 0.48354945, b: 0.35514414, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -302,7 +302,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritesParent: {fileID: 3412515175690441992}
   rotateSpeed: 100
-  alphaFalloff: 0.3
+  alphaFalloff: 0.1
+  baseAlphaOffMainSprite: 0
 --- !u!1 &2639272183922902362
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,6 +5447,7 @@ GameObject:
   - component: {fileID: 5402386180882412112}
   - component: {fileID: 2871729370037592593}
   - component: {fileID: 7145000110469989892}
+  - component: {fileID: 9169719157212437618}
   m_Layer: 6
   m_Name: TankEnemy
   m_TagString: Untagged
@@ -5469,7 +5471,7 @@ Transform:
   - {fileID: 3412515175690441992}
   - {fileID: 6457777256722505612}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2496060912340221401
 MonoBehaviour:
@@ -5485,6 +5487,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 2
   enemyType: {fileID: 11400000, guid: 63ab9a59f949c2d489fc71d9370f67b4, type: 2}
+  visible: 1
 --- !u!114 &5998927513247051320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5597,6 +5600,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.47584376, y: 0.48130372}
   m_EdgeRadius: 0
+--- !u!114 &9169719157212437618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7352704552204728733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c365b8149d1b3f48ad0071e9df1dc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToFlash:
+  - {fileID: 4665414352429956367}
+  - {fileID: 1889973830}
+  - {fileID: 1462454752}
+  - {fileID: 1544716379}
 --- !u!1 &9080472560551085198
 GameObject:
   m_ObjectHideFlags: 0
@@ -5669,9 +5689,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 448993994a623334da0ab9956c0f0375, type: 3}
-  m_Color: {r: 0.8962264, g: 0.57827127, b: 0.502225, a: 1}
+  m_Color: {r: 0.9245283, g: 0.5441835, b: 0.3959772, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

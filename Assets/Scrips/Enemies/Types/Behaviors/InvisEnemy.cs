@@ -6,7 +6,7 @@ using UnityEngine;
 public class InvisEnemy : AbstractEnemy
 {
     [SerializeField] private SpriteRenderer baseSpriteRend;
-    [SerializeField] private Color revealedColor;
+    [SerializeField] public Color revealedColor;
     [SerializeField] private RotateSprite rotateSprite;
     protected override void Start()
     {

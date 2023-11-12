@@ -5171,6 +5171,7 @@ GameObject:
   - component: {fileID: 7634361982357198086}
   - component: {fileID: 347336789976532295}
   - component: {fileID: 2761126273880985131}
+  - component: {fileID: 4708872435726425837}
   m_Layer: 6
   m_Name: MedBoss
   m_TagString: Untagged
@@ -5194,7 +5195,7 @@ Transform:
   - {fileID: 1865998918783688181}
   - {fileID: 5481385600980234625}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &583907305079151654
 MonoBehaviour:
@@ -5327,6 +5328,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8992878, y: 0.89589214}
   m_EdgeRadius: 0
+--- !u!114 &4708872435726425837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4972430872261369547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c365b8149d1b3f48ad0071e9df1dc0a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spritesToFlash:
+  - {fileID: 4367679724002765271}
+  - {fileID: 5742162886909715208}
+  - {fileID: 2652477322725287091}
+  - {fileID: 3147398627830637509}
 --- !u!1 &7812582477417157724
 GameObject:
   m_ObjectHideFlags: 0
@@ -5377,7 +5395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spritesParent: {fileID: 5481385600980234625}
   rotateSpeed: 50
-  alphaFalloff: 0.3
+  alphaFalloff: 0.1
   baseAlphaOffMainSprite: 0
 --- !u!1 &7840160204953664871
 GameObject:
